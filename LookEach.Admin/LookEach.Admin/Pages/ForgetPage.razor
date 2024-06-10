@@ -1,0 +1,72 @@
+﻿@page "/LookEach/ForgetPassword"
+@layout LookEach.Admin.Shared.Empty
+<PageTitle>LookEach - Quên Mật Khẩu</PageTitle>
+
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col-12">
+            <div class="login-card login-dark">
+                <div>
+                    <div><a class="logo" href="index.html" style="font-size: 22px;font-weight: 500;">LOOkEACH - SYSTEM</a></div>
+                    <div class="login-main">
+                        <form class="theme-form">
+                            <h4>Đặt Lại Mật Khẩu</h4>
+                            <div class="form-group">
+                                <label class="col-form-label">Nhập Email Của Bạn</label>
+                                <div class="row">
+                                    <div class="col-12 col-sm-12">
+                                        <input class="form-control mb-1" type="email" value="admin@gmail.com">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="text-end">
+                                            <button class="btn btn-primary btn-block m-t-10" type="submit">Gửi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-4"><span class="reset-password-link">Nếu bạn chưa nhận được mail?  <a class="btn-link text-danger" href="#">Gửi lại</a></span></div>
+                            <div class="form-group">
+                                <label class="col-form-label pt-0">Nhập Mã Khôi Phục</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control text-center opt-text" type="text" value="00" maxlength="2">
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control text-center opt-text" type="text" value="00" maxlength="2">
+                                    </div>
+                                    <div class="col">
+                                        <input class="form-control text-center opt-text" type="text" value="00" maxlength="2">
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mt-4">Tạo Mật Khẩu Mới</h6>
+                            <div class="form-group">
+                                <label class="col-form-label">Mật Khẩu</label>
+                                <div class="form-input position-relative">
+                                    <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
+                                    <div class="show-hide"><span class="show"></span></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-form-label">Xác Nhận Mật Khẩu</label>
+                                <input class="form-control" type="password" name="login[password]" required="" placeholder="*********">
+                            </div>
+                            <div class="form-group mb-0">
+                                <div class="checkbox p-0">
+                                    <input id="checkbox1" type="checkbox">
+                                    <!-- <label class="text-muted" for="checkbox1">Remember password</label> -->
+                                </div>
+                                <button class="btn btn-primary btn-block w-100" type="submit">Xác Nhận</button>
+                            </div>
+                            <p class="mt-4 mb-0 text-center">Đã có mật khẩu<a class="ms-2" href="/LookEach/Login">Đăng Nhập</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

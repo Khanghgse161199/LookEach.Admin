@@ -1,0 +1,99 @@
+﻿@page "/LookEach/Employee/Create"
+<PageTitle>LookEach - Tạo Nhân Viên</PageTitle>
+
+<div class="container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-sm-6 ps-0">
+                <h3>Tạo Nhân Viên</h3>
+            </div>
+            <div class="col-sm-6 pe-0">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="edit-profile">
+        <div class="row">
+            <div class="col-xl-12">
+                <form class="card">
+                    <div class="card-header pb-0">
+                        <h3 class="card-title mb-0">Thông Tin</h3>
+                        <div class="card-options"><a class="card-options-collapse" href="#" data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a><a class="card-options-remove" href="#" data-bs-toggle="card-remove"><i class="fe fe-x"></i></a></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input class="form-control" type="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Mật Khẩu</label>
+                                    <input class="form-control" type="password" placeholder="Mật Khẩu">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Xác Nhận Mật Khẩu</label>
+                                    <input class="form-control" type="password" placeholder="Xác Nhận Mật Khẩu">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Họ</label>
+                                    <input class="form-control" type="text" placeholder="Họ">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Tên</label>
+                                    <input class="form-control" type="text" placeholder="Tên">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Địa Chỉ</label>
+                                    <input class="form-control" type="text" placeholder="Địa Chỉ">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Số CCCD</label>
+                                    <input class="form-control" type="text" placeholder="CCCD">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Giới Tính</label>
+                                    <select class="form-control btn-square">
+                                        <option value="0">Chọn giới tính</option>
+                                        <option value="1">Nam</option>
+                                        <option value="2">Nữ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label class="form-label">Về Bản Thân</label>
+                                    <textarea class="form-control" rows="4" placeholder="Mô tả về bản thân bạn..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-primary" type="submit">Tạo Mới</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->
+
+@code {
+
+}

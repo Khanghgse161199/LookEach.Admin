@@ -1,0 +1,485 @@
+﻿@page "/"
+<PageTitle>LookEach - Tổng Quan</PageTitle>
+
+<div class="container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-sm-6 p-0">
+                <h3>Tổng Quan</h3>
+            </div>
+            <div class="col-sm-6 p-0">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid starts-->
+<div class="container-fluid default-dashboard">
+    <div class="row">
+        <div class="col-xxl-4 col-xl-100 box-col-12 ps-4 pe-4 left-background">
+            <div class="row bg-light h-100 p-3 pt-4 pb-4">
+                <div class="col-12 col-xl-50 box-col-6">
+                    <div class="card welcome-card">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="flex-grow-1">
+                                    <h1>Xin Chào, Admin@gmail.com</h1>
+                                    <p>Chào mừng trở lại! Hãy bắt đầu từ nơi bạn rời đi</p><a class="btn"
+                                                                                              href="/LookEach/Profile">Xem Hồ Sơ</a>
+                                </div>
+                                <div class="flex-shrink-0"> <img src="../assets/images/dashboard/welcome.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-50 box-col-6">
+                    <div class="row">
+                        <div class="col-12 col-lg-12 col-md-6 box-col-12">
+                            <div class="card total-earning">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-7 box-col-7">
+                                            <div class="d-flex">
+                                                <h3 class="font-primary">Danh Thu</h3>
+                                            </div>
+                                            <h5>22,000,000 VNĐ</h5><span>+ 16.06% so với tháng trước</span>
+                                        </div>
+                                        <div class="col-sm-5 box-col-5 p-0">
+                                            <div id="income-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-12 col-md-6 box-col-12">
+                            <div class="card total-earning">
+                                <div class="card-body pb-0">
+                                    <div class="row">
+                                        <div class="col-sm-7 box-col-7">
+                                            <div class="d-flex">
+                                                <h3 class="font-primary">Số Lượng Nhân Viên</h3>
+                                            </div>
+                                            <h5>468 Nhân Viên</h5><span>+ 10.34% so với tháng trước</span>
+                                        </div>
+                                        <div class="col-sm-5 box-col-5 p-0">
+                                            <div id="expense-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-xl-50 col-md-6 box-col-6">
+                    <div class="card product-chart mb-0">
+                        <div class="card-header pb-0">
+                            <div class="header-top">
+                                <h4>Top 6 Sản Phẩm</h4>
+                                <div class="dropdown icon-dropdown">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pb-0">
+                            <div class="d-flex">
+                                <h2 class="me-2">(#456)</h2><span>Tổng Số Sản Phẩm Được Bán</span>
+                            </div>
+                            <div class="product-chart">
+                                <div class="shap-block">
+                                    <div class="rounded-shap animate-bg-secondary"><i></i><i></i></div>
+                                </div>
+                                <div id="product-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 col-xl-100 box-col-12">
+            <div class="row">
+                <div class="col-xxl-8 col-xl-100 box-col-12 proorder-xl-1">
+                    <div class="card">
+                        <div class="card-header card-no-border pb-0">
+                            <div class="header-top">
+                                <h4>Top 4 Đơn Hàng Giá Trị</h4>
+                                <div class="dropdown icon-dropdown">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0 recent">
+                            <div class="table-responsive custom-scrollbar">
+                                <table class="table display" id="resent-order" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã Đơn Hàng</th>
+                                            <th>Ngày Tạo</th>
+                                            <th>Người Mua</th>
+                                            <th>Chi Phí</th>
+                                            <th>Trạng Thái</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <a href="user-profile.html"></a>
+                                                        <a>
+                                                            <h6>Elle Amberson</h6><span>#Gh3649K</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6>15 Nov, 2022</h6><span>02:45 PM</span>
+                                            </td>
+                                            <td>Wood Chair</td>
+                                            <td>$152</td>
+                                            <td>
+                                                <button class="badge badge-light-primary rounded-pill txt-primary">Paid</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <a href="user-profile.html">
+                                                            <h6>Anna Catmire</h6><span>#A5647KB</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6>25 Nov, 2022</h6><span>01:24 PM</span>
+                                            </td>
+                                            <td>Men Sneakers</td>
+                                            <td>$652</td>
+                                            <td>
+                                                <button class="badge badge-light-secondary rounded-pill txt-secondary">Pending</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <a href="user-profile.html">
+                                                            <h6>Laura Dagson</h6><span>#KO093M</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6>26 Nov, 2022</h6><span>12:34 PM</span>
+                                            </td>
+                                            <td>Tree Stylish </td>
+                                            <td>$256</td>
+                                            <td>
+                                                <button class="badge badge-light-primary rounded-pill txt-primary">Paid</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <a href="user-profile.html">
+                                                            <h6>Rachel Green</h6><span>#KMG403</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6>28 Nov, 2022</h6><span>10:27 PM</span>
+                                            </td>
+                                            <td>Mi Watch</td>
+                                            <td>$659</td>
+                                            <td>
+                                                <button class="badge badge-light-danger rounded-pill txt-danger">Overdue</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-xl-50 col-md-6 box-col-6 proorder-xl-6">
+                    <div class="card sales" style="height: 93%;">
+                        <div class="card-header card-no-border pb-0">
+                            <div class="header-top">
+                                <h4>Tổng Quan Đơn Hàng</h4>
+                                <div class="dropdown icon-dropdown">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="sales-chart"></div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 me-2"><span class="bg-primary"></span></div>
+                                <div class="flex-grow-1 me-2">
+                                    <h5>Tổng Số Đơn Tháng 6: <strong>222 Đơn</strong></h5>
+                                </div>
+                                <div class="flex-shrink-0 me-2"><span class="bg-light-primary"></span></div>
+                                <!-- <div class="flex-grow-1">
+                                  <h5>Tổng Doanh Thu <strong>34,000,000</strong></h5>
+                                </div> -->
+                            </div>
+                            <p>Luôn cập nhật thông tin để tăng số lượng tương tác</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-50 col-sm-6 proorder-xl-2">
+                    <div class="card since">
+                        <div class="card-body">
+                            <div class="customer-card d-flex b-l-primary border-2">
+                                <div class="ms-3">
+                                    <h3 class="mt-1">Khách Hàng</h3>
+                                    <h5 class="mt-1">148 KH</h5>
+                                </div>
+                                <div class="dashboard-user bg-light-primary">
+                                    <span></span>
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#male"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="customer mt-2">
+                                <span class="me-1">
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#arrow-up"></use>
+                                    </svg>
+                                </span><span class="font-success me-2">+ 4.6%</span><span>so với tháng trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-50 col-sm-6 proorder-xl-5">
+                    <div class="card since">
+                        <div class="card-body invoice-profit">
+                            <div class="customer-card d-flex b-l-success border-2">
+                                <div class="ms-3">
+                                    <h3 class="mt-1">Người Bán</h3>
+                                    <h5 class="mt-1">125 NB</h5>
+                                </div>
+                                <div class="dashboard-user bg-light-success">
+                                    <span></span>
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#invoice"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="customer mt-2">
+                                <span class="me-1">
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#arrow-up"></use>
+                                    </svg>
+                                </span><span class="font-success me-2">+ 6.3%</span><span>so với tháng trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-50 col-sm-6 proorder-xl-3">
+                    <div class="card since">
+                        <div class="card-body money">
+                            <div class="customer-card d-flex b-l-secondary border-2">
+                                <div class="ms-3">
+                                    <h3 class="mt-1">Đơn Hàng</h3>
+                                    <h5 class="mt-1">500 Đơn</h5>
+                                </div>
+                                <div class="dashboard-user bg-light-secondary">
+                                    <span></span>
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#money"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="customer mt-2">
+                                <span class="me-1">
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#arrow-up"></use>
+                                    </svg>
+                                </span><span class="font-success me-2">+ 3.10%</span><span>so với tháng trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-50 col-sm-6 proorder-xl-4">
+                    <div class="card since">
+                        <div class="card-body profit">
+                            <div class="customer-card d-flex b-l-danger border-2">
+                                <div class="ms-3">
+                                    <h3 class="mt-1">Voucher</h3>
+                                    <h5 class="mt-1">70 Sử Dụng</h5>
+                                </div>
+                                <div class="dashboard-user bg-light-danger">
+                                    <span></span>
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#profile"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="customer mt-2">
+                                <span class="me-1">
+                                    <svg>
+                                        <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#arrow-down"></use>
+                                    </svg>
+                                </span><span class="font-danger me-2">- 2.3%</span><span>so với tháng trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-50 col-md-6 box-col-6 proorder-xl-7">
+                    <div class="card review-slider" style="height: 93%;">
+                        <div class="card-header card-no-border pb-0">
+                            <div class="header-top">
+                                <h4>Top 3 Voucher</h4>
+                                <div class="dropdown icon-dropdown">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="owl-carousel owl-theme" id="owl-carousel-dashboard">
+                                <div class="review">
+                                    <div>
+                                        <img class="img-fluid" src="../assets/images/dashboard/user/ticket-1.png" alt="">
+                                        <div class="review-content">
+                                            <h2>Giảm 20k - Đơn tối thiểu 150k</h2>
+                                        </div>
+                                        <div class="d-flex">
+
+
+                                            <div class="flex-grow-1">
+                                                <h5>136 lượt sử dụng</h5>
+                                            </div>
+                                        </div>
+                                        <p>“06/10/2024”</p>
+                                    </div>
+                                </div>
+                                <div class="review">
+                                    <div>
+                                        <img class="img-fluid" src="../assets/images/dashboard/user/ticket-2.png" alt="">
+                                        <div class="review-content">
+                                            <h2>Giảm 20k - Đơn tối thiểu 150k</h2>
+                                        </div>
+                                        <div class="d-flex">
+
+
+                                            <div class="flex-grow-1">
+                                                <h5>136 lượt sử dụng</h5>
+                                            </div>
+                                        </div>
+                                        <p>“06/10/2024”</p>
+                                    </div>
+                                </div>
+                                <div class="review">
+                                    <div>
+                                        <img class="img-fluid" src="../assets/images/dashboard/user/ticket-3.png" alt="">
+                                        <div class="review-content">
+                                            <h2>Giảm 20k - Đơn tối thiểu 150k</h2>
+                                        </div>
+                                        <div class="d-flex">
+
+
+                                            <div class="flex-grow-1">
+                                                <h5>136 lượt sử dụng</h5>
+                                            </div>
+                                        </div>
+                                        <p>“06/10/2024”</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-9 col-xl-100 box-col-12 proorder-xl-8">
+                    <div class="card sales overview">
+                        <div class="card-header card-no-border pb-0">
+                            <div class="header-top">
+                                <h4>Tổng Quan Đánh Giá</h4>
+                                <div class="dropdown icon-dropdown">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="sales-chart">
+                                <div class="shap-2">
+                                    <div class="rounded-shap animate-bg-secondary"><i></i><i></i></div>
+                                </div>
+                                <div class="shap-2">
+                                    <div class="rounded-shap animate-bg-secondary"><i></i><i></i></div>
+                                </div>
+                                <div class="shap-2">
+                                    <div class="rounded-shap animate-bg-secondary"><i></i><i></i></div>
+                                </div>
+                                <div class="shap-2">
+                                    <div class="rounded-shap animate-bg-secondary"><i></i><i></i></div>
+                                </div>
+                                <div id="sales-overview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row proorder-xl-9 pe-0">
+                    <div class="col-xl-12 col-xl-100 col-md-12">
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <div class="card leads">
+                                    <div class="card-header card-no-border pb-0">
+                                        <div class="header-top">
+                                            <h4>Top 3 Nhân Viên</h4>
+                                            <div class="dropdown icon-dropdown">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="lead-status">
+                                            <ul>
+                                                <li>Nhân Viên</li>
+                                                <li class="border-3 b-l-primary">Lena Smith</li>
+                                                <li class="border-3 b-l-secondary">Nicol Green</li>
+                                                <li class="border-3 b-l-danger mb-0">Tom Taylor</li>
+                                            </ul>
+                                            <ul>
+                                                <li>Ngày Tạo</li>
+                                                <li>June 14, 2023</li>
+                                                <li>June 16, 2023</li>
+                                                <li class="mb-0">June 18, 2023</li>
+                                            </ul>
+                                            <ul>
+                                                <li>Vai Trò </li>
+                                                <li> Admin</li>
+                                                <li> Sales</li>
+                                                <li class="mb-0">
+                                                    Kế Toán
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li>Trạng Thái</li>
+                                                <li class="bg-light-primary font-primary">Deal Won</li>
+                                                <li class="bg-light-secondary font-secondary">Intro Call</li>
+                                                <li class="bg-light-danger font-danger mb-0">Stuck</li>
+                                            </ul>
+                                            <ul>
+                                                <li>Lương Cứng</li>
+                                                <li>30,000,000 VNĐ</li>
+                                                <li>21,000,000 VNĐ</li>
+                                                <li class="mb-0">17,000,000 VNĐ</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

@@ -1,0 +1,83 @@
+﻿@page "/LookEach/Voucher/Create"
+<PageTitle>LookEach - Tạo Voucher</PageTitle>
+
+<div class="container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-sm-6 ps-0">
+                <h3>Tạo Voucher</h3>
+            </div>
+            <div class="col-sm-6 pe-0">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="edit-profile">
+        <div class="row">
+            <div class="col-xl-12">
+                <form class="card">
+                    <div class="card-header pb-0">
+                        <h3 class="card-title mb-0">Thông Tin</h3>
+                        <div class="card-options"><a class="card-options-collapse" href="#" data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a><a class="card-options-remove" href="#" data-bs-toggle="card-remove"><i class="fe fe-x"></i></a></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Tên Voucher</label>
+                                    <input class="form-control" type="text" placeholder="Tên Voucher">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Giảm Giá</label>
+                                    <input class="form-control" type="number" placeholder="50,000 VNĐ">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Điều Kiện</label>
+                                    <input class="form-control" type="number" placeholder="100,000 VNĐ">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Số Lượng</label>
+                                    <input class="form-control" type="number" placeholder="10">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Ngày Hiệu Lực</label>
+                                    <input class="form-control" type="datetime">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Ngày Hết Hạn</label>
+                                    <input class="form-control" type="datetime">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label class="form-label">Ghi Chú</label>
+                                    <textarea class="form-control" rows="4" placeholder="Ghi Chú"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-primary" type="submit">Tạo Mới</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->
+
+@code {
+
+}

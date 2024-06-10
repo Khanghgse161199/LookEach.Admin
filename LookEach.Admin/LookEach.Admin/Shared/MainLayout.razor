@@ -1,0 +1,342 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+<body>
+    <style>
+        .fa-angle-right::before {
+            content: "" !important;
+        }
+
+        .customizer-links{
+            display:none !important;
+        }
+    </style>
+    <!-- loader starts-->
+    <div class="loader-wrapper">
+        <div class="theme-loader">
+            <div class="loader-p"></div>
+        </div>
+    </div>
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+        <div class="page-header">
+            <div class="header-wrapper row m-0">
+                <div class="header-logo-wrapper col-auto p-0">
+                    <div class="logo-wrapper">
+                        <a href="/" style="font-size: 22px;font-weight: 500;">
+                            LOOkEACH - SYSTEM
+                        </a>
+                    </div>
+                    <div class="toggle-sidebar">
+                        <svg class="sidebar-toggle">
+                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-animation"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="left-header col-xxl-5 col-xl-6 col-auto box-col-6 horizontal-wrapper p-0">
+                    <div class="left-menu-header">
+                    </div>
+                </div>
+                <div class="nav-right col-xxl-7 col-xl-6 col-auto box-col-6 pull-right right-header p-0 ms-auto">
+                    <ul class="nav-menus">
+                        <li class="serchinput">
+                            <div class="serchbox">
+                                <svg>
+                                    <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-search"></use>
+                                </svg>
+                            </div>
+                            <div class="form-group search-form">
+                                <input type="text" placeholder="Search here...">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group w-100">
+                                <div class="Typeahead Typeahead--twitterUsers">
+                                    <div class="u-posRelative d-flex">
+                                        <svg class="search-bg svg-color me-2">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-search"></use>
+                                        </svg>
+                                        <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text"
+                                               placeholder="Tìm Kiếm..." name="q" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="onhover-dropdown">
+                            <div class="notification-box">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div class="onhover-show-div notification-dropdown">
+                                <h6 class="f-18 mb-0 dropdown-title">Thông Báo</h6>
+                                <ul>
+                                    <li class="b-l-primary bg-light-primary border-4 mt-3">
+                                        <p class="font-primary">
+                                            Đơn hàng #192 đã xác nhậnh<span class="font-primary">10 phút trước</span>
+                                        </p>
+                                    </li>
+                                    <li class="b-l-secondary bg-light-secondary border-4 mt-3">
+                                        <p class="font-secondary">
+                                            Đơn hàng #182 đã được cập nhật trạng thái - hoàn thành<span class="font-secondary">1 tiếng trước</span>
+                                        </p>
+                                    </li>
+                                    <li class="b-l-success bg-light-success border-4 mt-3">
+                                        <p class="font-success">
+                                            Nhân Viên - PNDuy@gmail.com đã xác nhận email thành công<span class="font-success">3 tiếng trước</span>
+                                        </p>
+                                    </li>
+                                    <li class="b-l-info bg-light-info border-4 mt-3">
+                                        <p class="font-info">
+                                            Nguyễn Minh Dũ đã trở thành đại lý - cửa hàng lamboro<span class="font-info">
+                                                6
+                                                tiếng trước
+                                            </span>
+                                        </p>
+                                    </li>
+                                    <li><a class="f-w-700" href="private-chat.html">Check all</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mode">
+                                <i class="fa-solid fa-circle-half-stroke"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <script class="result-template" type="text/x-handlebars-template">
+                    <div class="ProfileCard u-cf">
+                    <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+                    <div class="ProfileCard-details">
+                    <div class="ProfileCard-realName">{{name}}</div>
+                    </div>
+                    </div>
+                </script>
+                <script class="empty-template"
+                        type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
+            </div>
+        </div>
+        <!-- Page Header Ends-->
+        <!-- Page Body Start-->
+        <div class="page-body-wrapper">
+            <!-- Page Sidebar Start-->
+            <div class="sidebar-wrapper" data-layout="fill-svg">
+                <div>
+                    <div class="logo-wrapper">
+                        <a href="/" style="font-size: 17px;font-weight: 500;">
+                            LOOkEACH - SYSTEM
+                        </a>
+                        <div class="toggle-sidebar">
+                            <svg class="sidebar-toggle">
+                                <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#toggle-icon"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="logo-icon-wrapper">
+                        <a href="/">
+                            <img class="img-fluid"
+                                 src="../assets/images/logo/logo-icon.png" alt="">
+                        </a>
+                    </div>
+                    <nav class="sidebar-main">
+                        <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+                        <div id="sidebar-menu">
+                            <ul class="sidebar-links" id="simple-bar">
+                                <li class="back-btn">
+                                    <a href="/">
+                                        <img class="img-fluid"
+                                             src="../assets/images/logo/logo-icon.png" alt="">
+                                    </a>
+                                    <div class="mobile-back text-end">
+                                        <span>Back</span><i class="fa fa-angle-right ps-2"
+                                                            aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="pin-title sidebar-main-title">
+                                    <div>
+                                        <h6>Pinned</h6>
+                                    </div>
+                                </li>
+                                <li class="sidebar-main-title">
+                                    <div>
+                                        <!-- <h6 class="lan-1">General</h6> -->
+                                    </div>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-home"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-home"></use>
+                                        </svg><span class="lan">Tổng Quan</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a class="lan" href="/">Thông Tin</a></li>
+                                        <li><a class="lan" href="/LookEach/Transaction">Lịch Sử Giao Dịch</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
+                                                                        href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-project"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-project"></use>
+                                        </svg><span>Quản Lý Nhân Viên </span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a href="/LookEach/Employee">Danh Sách Nhân Viên</a></li>
+                                        <li><a href="/LookEach/Employee/Create">Thêm Mới Nhân Viên</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
+                                                                        href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-project"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-project"></use>
+                                        </svg><span>Quản Lý Cửa Hàng</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a href="/LookEach/Merchant">Danh Sách Cửa Hàng</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
+                                                                        href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-project"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-project"></use>
+                                        </svg><span>Quản Lý Người Mua</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a href="/LookEach/Customer">Danh Sách Người Mua</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
+                                                                        href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-project"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-project"></use>
+                                        </svg><span>Quản Lý Đơn Hàng</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a href="/LookEach/Order">Danh Sách Đơn Hàng</a></li>
+                                        <li><a href="/LookEach/OrderCancel">Đơn Hàng Đã Hủy</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
+                                                                        href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-project"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-project"></use>
+                                        </svg><span>Voucher</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a href="/LookEach/Voucher">Danh Sách Voucher</a></li>
+                                        <li><a href="/LookEach/Voucher/Create">Tạo Mới Voucher</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
+                                                                        href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-project"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-project"></use>
+                                        </svg><span>Danh Mục</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a href="/LookEach/ProductType">Loại Sản Phẩm</a></li>
+                                        <li><a href="/LookEach/Color">Màu Sắc</a></li>
+                                        <li><a href="/LookEach/Size">Kích Thước</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title"
+                                                                        href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-project"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#fill-project"></use>
+                                        </svg><span>Tài Khoản</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li><a href="/LookEach/Profile">Hồ Sơ Nhân Viên</a></li>
+                                        <li><a href="/LookEach/Login">Đăng Xuất</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="page-body">
+                @Body
+            </div>
+        </div>
+    </div>
+    <!-- latest jquery-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- feather icon js-->
+    <script src="assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="assets/js/icons/feather-icon/feather-icon.js"></script>
+    <!-- scrollbar js-->
+    <script src="assets/js/scrollbar/simplebar.js"></script>
+    <script src="assets/js/scrollbar/custom.js"></script>
+    <!-- Sidebar jquery-->
+    <script src="assets/js/config.js"></script>
+    <!-- Plugins JS start-->
+    <script src="assets/js/sidebar-menu.js"></script>
+    <script src="assets/js/sidebar-pin.js"></script>
+    <script src="assets/js/slick/slick.min.js"></script>
+    <script src="assets/js/slick/slick.js"></script>
+    <script src="assets/js/header-slick.js"></script>
+    <script src="assets/js/chart/morris-chart/raphael.js"></script>
+    <script src="assets/js/chart/morris-chart/morris.js"> </script>
+    <script src="assets/js/chart/morris-chart/prettify.min.js"></script>
+    <script src="assets/js/chart/apex-chart/apex-chart.js"></script>
+    <script src="assets/js/chart/apex-chart/stock-prices.js"></script>
+    <script src="assets/js/chart/apex-chart/moment.min.js"></script>
+    <script src="assets/js/notify/bootstrap-notify.min.js"></script>
+    <script src="assets/js/dashboard/default.js"></script>
+    <script src="assets/js/notify/index.js"></script>
+    <script src="assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/js/datatable/datatables/datatable.custom.js"></script>
+    <script src="assets/js/datatable/datatables/datatable.custom1.js"></script>
+    <script src="assets/js/owlcarousel/owl.carousel.js"></script>
+    <script src="assets/js/owlcarousel/owl-custom.js"></script>
+    <script src="assets/js/typeahead/handlebars.js"></script>
+    <script src="assets/js/typeahead/typeahead.bundle.js"></script>
+    <script src="assets/js/typeahead/typeahead.custom.js"></script>
+    <script src="assets/js/typeahead-search/handlebars.js"></script>
+    <script src="assets/js/typeahead-search/typeahead-custom.js"></script>
+    <script src="assets/js/height-equal.js"></script>
+    <!-- Plugins JS Ends-->
+    <!-- Theme js-->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/theme-customizer/customizer.js"></script>
+</body>
+
+@code {
+
+}

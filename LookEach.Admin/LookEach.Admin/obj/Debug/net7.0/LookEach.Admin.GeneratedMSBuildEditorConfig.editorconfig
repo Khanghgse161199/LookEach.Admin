@@ -1,0 +1,131 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LookEach.Admin
+build_property.RootNamespace = LookEach.Admin
+build_property.ProjectDir = E:\Project Code\Frontend_Practical\LookEach.Admin\LookEach.Admin\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\Project Code\Frontend_Practical\LookEach.Admin\LookEach.Admin
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/ColorPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sb3JQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/CustomerPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/EmployeeCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/EmployeePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/ForgetPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9yZ2V0UGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/Grid.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JpZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/MerchantPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVyY2hhbnRQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/OrderCancel.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJDYW5jZWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/OrderPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/ProductTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdFR5cGVQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/ProfilePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/SizePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2l6ZVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/TransactionPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNhY3Rpb25QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/VoucherCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVm91Y2hlckNyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/VoucherPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVm91Y2hlclBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Shared/BrowserNotSupported.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEJyb3dzZXJOb3RTdXBwb3J0ZWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Shared/Empty.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEVtcHR5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Shared/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEhlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-zwhx4zz9m1
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-0mhninx4ps
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-efx5ew5sp9
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/_Empty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0VtcHR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project Code/Frontend_Practical/LookEach.Admin/LookEach.Admin/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

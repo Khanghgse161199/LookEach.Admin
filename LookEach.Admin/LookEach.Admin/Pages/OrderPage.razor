@@ -1,0 +1,890 @@
+﻿@page "/LookEach/Order"
+<PageTitle>LookEach - Đơn Hàng</PageTitle>
+
+<div class="container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-sm-6 ps-0">
+                <h3>Danh Sách Đơn Hàng</h3>
+            </div>
+            <div class="col-sm-6 pe-0">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-xl-12">
+            <div class="card height-equal">
+                <div class="card-body">
+                    <ul class="nav nav-pills nav-primary" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="f-w-600 nav-link active" id="pills-aboutus-tab" data-bs-toggle="pill"
+                               href="#pills-aboutus" role="tab" aria-controls="pills-aboutus" aria-selected="true">
+                                Đã Xác
+                                Nhận
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="f-w-600 nav-link" id="pills-contactus-tab" data-bs-toggle="pill"
+                               href="#pills-contactus" role="tab" aria-controls="pills-contactus" aria-selected="false">
+                                Đang
+                                Vận Chuyển
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="f-w-600 nav-link" id="pills-blog-tab" data-bs-toggle="pill"
+                               href="#pills-blog" role="tab" aria-controls="pills-blog" aria-selected="false">Đã Giao Hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="f-w-600 nav-link" id="pills-blog-tab-2" data-bs-toggle="pill"
+                               href="#pills-blog-2" role="tab" aria-controls="pills-blog-2" aria-selected="false">
+                                Hoàn
+                                Thành
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent" style="margin-top: 20px;">
+                        <div class="tab-pane fade show active" id="pills-aboutus" role="tabpanel"
+                             aria-labelledby="pills-aboutus-tab">
+                            <!--tab xác nhận-->
+                            <div class="row">
+                                <!-- Zero Configuration  Starts-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header pb-0 card-no-border">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive custom-scrollbar">
+                                                <table class="display" id="basic-1">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Mã Đơn Hàng</th>
+                                                            <th>Ngày Tạo</th>
+                                                            <th>Hình Thức Thanh Toán</th>
+                                                            <th>Nghiệm Thu</th>
+                                                            <th>Tổng Số Lượng Sản Phẩm</th>
+                                                            <th>Cập Nhật</th>
+                                                            <th>Hủy Đơn Hàng</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>61</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>63</td>
+                                                            <td>2011/07/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                            <td>San Francisco</td>
+                                                            <td>66</td>
+                                                            <td>2009/01/12</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2012/03/29</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Airi Satou</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>33</td>
+                                                            <td>2008/11/28</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brielle Williamson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>New York</td>
+                                                            <td>61</td>
+                                                            <td>2012/12/02</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Herrod Chandler</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>San Francisco</td>
+                                                            <td>59</td>
+                                                            <td>2012/08/06</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rhona Davidson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>Tokyo</td>
+                                                            <td>55</td>
+                                                            <td>2010/10/14</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Colleen Hurst</td>
+                                                            <td>Javascript Developer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>39</td>
+                                                            <td>2009/09/15</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sonya Frost</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>23</td>
+                                                            <td>2008/12/13</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jena Gaines</td>
+                                                            <td>Office Manager</td>
+                                                            <td>London</td>
+                                                            <td>30</td>
+                                                            <td>2008/12/19</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Quinn Flynn</td>
+                                                            <td>Support Lead</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2013/03/03</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Charde Marshall</td>
+                                                            <td>Regional Director</td>
+                                                            <td>San Francisco</td>
+                                                            <td>36</td>
+                                                            <td>2008/10/16</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Donna Snider</td>
+                                                            <td>Customer Support</td>
+                                                            <td>New York</td>
+                                                            <td>27</td>
+                                                            <td>2011/01/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Vận Chuyển</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Zero Configuration  Ends-->
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-contactus" role="tabpanel"
+                             aria-labelledby="pills-contactus-tab">
+                            <!--tab vận chuyển-->
+                            <div class="row">
+                                <!-- Zero Configuration  Starts-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header pb-0 card-no-border">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive custom-scrollbar">
+                                                <table class="display" id="basic-1">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Mã Đơn Hàng</th>
+                                                            <th>Ngày Tạo</th>
+                                                            <th>Hình Thức Thanh Toán</th>
+                                                            <th>Nghiệm Thu</th>
+                                                            <th>Tổng Số Lượng Sản Phẩm</th>
+                                                            <th>Cập Nhật</th>
+                                                            <th>Hủy Đơn Hàng</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>61</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>63</td>
+                                                            <td>2011/07/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                            <td>San Francisco</td>
+                                                            <td>66</td>
+                                                            <td>2009/01/12</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2012/03/29</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Airi Satou</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>33</td>
+                                                            <td>2008/11/28</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brielle Williamson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>New York</td>
+                                                            <td>61</td>
+                                                            <td>2012/12/02</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Herrod Chandler</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>San Francisco</td>
+                                                            <td>59</td>
+                                                            <td>2012/08/06</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rhona Davidson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>Tokyo</td>
+                                                            <td>55</td>
+                                                            <td>2010/10/14</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Colleen Hurst</td>
+                                                            <td>Javascript Developer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>39</td>
+                                                            <td>2009/09/15</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sonya Frost</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>23</td>
+                                                            <td>2008/12/13</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jena Gaines</td>
+                                                            <td>Office Manager</td>
+                                                            <td>London</td>
+                                                            <td>30</td>
+                                                            <td>2008/12/19</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Quinn Flynn</td>
+                                                            <td>Support Lead</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2013/03/03</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Charde Marshall</td>
+                                                            <td>Regional Director</td>
+                                                            <td>San Francisco</td>
+                                                            <td>36</td>
+                                                            <td>2008/10/16</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Donna Snider</td>
+                                                            <td>Customer Support</td>
+                                                            <td>New York</td>
+                                                            <td>27</td>
+                                                            <td>2011/01/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Giao</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Zero Configuration  Ends-->
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">
+                            <!--tab giao hàng-->
+                            <div class="row">
+                                <!-- Zero Configuration  Starts-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header pb-0 card-no-border">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive custom-scrollbar">
+                                                <table class="display" id="basic-1">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Mã Đơn Hàng</th>
+                                                            <th>Ngày Tạo</th>
+                                                            <th>Hình Thức Thanh Toán</th>
+                                                            <th>Nghiệm Thu</th>
+                                                            <th>Tổng Số Lượng Sản Phẩm</th>
+                                                            <th>Cập Nhật</th>
+                                                            <th>Hủy Đơn Hàng</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>61</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>63</td>
+                                                            <td>2011/07/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                            <td>San Francisco</td>
+                                                            <td>66</td>
+                                                            <td>2009/01/12</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2012/03/29</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Airi Satou</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>33</td>
+                                                            <td>2008/11/28</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brielle Williamson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>New York</td>
+                                                            <td>61</td>
+                                                            <td>2012/12/02</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Herrod Chandler</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>San Francisco</td>
+                                                            <td>59</td>
+                                                            <td>2012/08/06</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rhona Davidson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>Tokyo</td>
+                                                            <td>55</td>
+                                                            <td>2010/10/14</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Colleen Hurst</td>
+                                                            <td>Javascript Developer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>39</td>
+                                                            <td>2009/09/15</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sonya Frost</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>23</td>
+                                                            <td>2008/12/13</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jena Gaines</td>
+                                                            <td>Office Manager</td>
+                                                            <td>London</td>
+                                                            <td>30</td>
+                                                            <td>2008/12/19</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Quinn Flynn</td>
+                                                            <td>Support Lead</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2013/03/03</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Charde Marshall</td>
+                                                            <td>Regional Director</td>
+                                                            <td>San Francisco</td>
+                                                            <td>36</td>
+                                                            <td>2008/10/16</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Donna Snider</td>
+                                                            <td>Customer Support</td>
+                                                            <td>New York</td>
+                                                            <td>27</td>
+                                                            <td>2011/01/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success">Đã Hoàn Thành</button>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Hủy Bỏ</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Zero Configuration  Ends-->
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-blog-2" role="tabpanel" aria-labelledby="pills-blog-tab-2">
+                            <!--tab hoàn thành-->
+                            <div class="row">
+                                <!-- Zero Configuration  Starts-->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header pb-0 card-no-border">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive custom-scrollbar">
+                                                <table class="display" id="basic-1">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Mã Đơn Hàng</th>
+                                                            <th>Ngày Tạo</th>
+                                                            <th>Hình Thức Thanh Toán</th>
+                                                            <th>Nghiệm Thu</th>
+                                                            <th>Tổng Số Lượng Sản Phẩm</th>
+                                                            <th>Ngày Giao Hàng</th>
+                                                            <th>Xóa</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>61</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>63</td>
+                                                            <td>2011/07/25</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                            <td>San Francisco</td>
+                                                            <td>66</td>
+                                                            <td>2009/01/12</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2012/03/29</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Airi Satou</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>33</td>
+                                                            <td>2008/11/28</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brielle Williamson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>New York</td>
+                                                            <td>61</td>
+                                                            <td>2012/12/02</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Herrod Chandler</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>San Francisco</td>
+                                                            <td>59</td>
+                                                            <td>2012/08/06</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rhona Davidson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>Tokyo</td>
+                                                            <td>55</td>
+                                                            <td>2010/10/14</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Colleen Hurst</td>
+                                                            <td>Javascript Developer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>39</td>
+                                                            <td>2009/09/15</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sonya Frost</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>23</td>
+                                                            <td>2008/12/13</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jena Gaines</td>
+                                                            <td>Office Manager</td>
+                                                            <td>London</td>
+                                                            <td>30</td>
+                                                            <td>2008/12/19</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Quinn Flynn</td>
+                                                            <td>Support Lead</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2013/03/03</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Charde Marshall</td>
+                                                            <td>Regional Director</td>
+                                                            <td>San Francisco</td>
+                                                            <td>36</td>
+                                                            <td>2008/10/16</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Donna Snider</td>
+                                                            <td>Customer Support</td>
+                                                            <td>New York</td>
+                                                            <td>27</td>
+                                                            <td>2011/01/25</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Zero Configuration  Ends-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Container-fluid Ends-->
+
+@code {
+
+}

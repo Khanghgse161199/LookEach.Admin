@@ -1,0 +1,423 @@
+﻿@page "/LookEach/Size"
+<PageTitle>LookEach - Kích Thước</PageTitle>
+
+ <div class="container-fluid">
+          <div class="page-title">
+            <div class="row">
+              <div class="col-sm-6 ps-0">
+                <h3>Kích Thước</h3>
+              </div>
+              <div class="col-sm-6 pe-0">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12 col-xl-12">
+              <div class="card height-equal">
+                <div class="card-body">
+                  <ul class="nav nav-pills nav-primary" id="pills-tab" role="tablist">
+                    <li class="nav-item"><a class="f-w-600 nav-link active" id="pills-aboutus-tab" data-bs-toggle="pill"
+                        href="#pills-aboutus" role="tab" aria-controls="pills-aboutus" aria-selected="true">Áo</a></li>
+                    <li class="nav-item"><a class="f-w-600 nav-link" id="pills-contactus-tab" data-bs-toggle="pill"
+                        href="#pills-contactus" role="tab" aria-controls="pills-contactus"
+                        aria-selected="false">Quần</a></li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent" style="margin-top: 20px;">
+                    <div class="tab-pane fade show active" id="pills-aboutus" role="tabpanel"
+                      aria-labelledby="pills-aboutus-tab">
+                      <!--tab xác nhận-->
+                      <div class="row">
+                       <div style="display: flex;justify-content: flex-end;">
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1"><span class="title">Thêm Mới</span></button>
+                          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h3 class="modal-title" id="exampleModalLabel1">Thêm Mới</h3>
+                                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form class="form-bookmark">
+                                    <div class="row g-2">
+                                      <div class="mb-3 col-md-12">
+                                        <input class="form-control" type="text" required="" placeholder="Tên kích thước" autocomplete="off">
+                                      </div>
+                                    </div>
+                                    <div class="row g-2">
+                                      <div class="mb-3 col-md-12">
+                                        <input class="form-control" type="text" required="" placeholder="Viết tắt" autocomplete="off">
+                                      </div>
+                                    </div>
+                                    <button class="btn btn-secondary" type="button">Thêm</button>
+                                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Hủy</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                       </div>
+                        <!-- Zero Configuration  Starts-->
+                        <div class="col-sm-12" style="margin-top: 20px;">
+                          <div class="card">
+                            <div class="card-header pb-0 card-no-border">
+                            </div>
+                            <div class="card-body">
+                              <div class="table-responsive custom-scrollbar">
+                                <table class="display" id="basic-1">
+                                  <thead>
+                                    <tr>
+                                      <th>Mã Áp Dụng</th>
+                                      <th>Ngày Tạo</th>
+                                      <th>Tên KT</th>
+                                      <th>Viết Tắt</th>
+                                      <th>Số Lượng Áp Dụng</th>
+                                      <th>Xóa</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>#11029</td>
+                                      <td>10/06/2024</td>
+                                      <td>Extra Large</td>
+                                      <td>XL</td>
+                                      <td>10</td>
+                                      <td>
+                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Zero Configuration  Ends-->
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-contactus" role="tabpanel"
+                      aria-labelledby="pills-contactus-tab">
+                      <!--tab vận chuyển-->
+                      <div class="row">
+                        <div style="display: flex;justify-content: flex-end;">
+                         <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal12"><span class="title">Thêm Mới</span></button>
+                           <div class="modal fade" id="exampleModal12" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel12" aria-hidden="true">
+                             <div class="modal-dialog" role="document">
+                               <div class="modal-content">
+                                 <div class="modal-header">
+                                   <h3 class="modal-title" id="exampleModalLabel12">Thêm Mới</h3>
+                                   <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                 </div>
+                                 <div class="modal-body">
+                                   <form class="form-bookmark">
+                                     <div class="row g-2">
+                                       <div class="mb-3 col-md-12">
+                                         <input class="form-control" type="number" required="" placeholder="Size số" autocomplete="off">
+                                       </div>
+                                     </div>
+                                     <button class="btn btn-secondary" type="button">Thêm</button>
+                                     <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Hủy</button>
+                                   </form>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                        </div>
+                         <!-- Zero Configuration  Starts-->
+                         <div class="col-sm-12" style="margin-top: 20px;">
+                           <div class="card">
+                             <div class="card-header pb-0 card-no-border">
+                             </div>
+                             <div class="card-body">
+                               <div class="table-responsive custom-scrollbar">
+                                 <table class="display" id="basic-1">
+                                   <thead>
+                                     <tr>
+                                       <th>Mã Áp Dụng</th>
+                                       <th>Ngày Tạo</th>
+                                       <th>Size Số</th>
+                                       <th>Số Lượng Áp Dụng</th>
+                                       <th>Xóa</th>
+                                     </tr>
+                                   </thead>
+                                   <tbody>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td>#11029</td>
+                                       <td>10/06/2024</td>
+                                       <td>32</td>
+                                       <td>10</td>
+                                       <td>
+                                         <button type="button" class="btn btn-danger">Xóa</button>
+                                       </td>
+                                     </tr>
+                                   </tbody>
+                                 </table>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                         <!-- Zero Configuration  Ends-->
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Container-fluid Ends-->
+
+@code {
+
+}
