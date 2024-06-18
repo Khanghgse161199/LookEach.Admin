@@ -1,0 +1,1132 @@
+﻿@page "/"
+@using LookEach.User.API
+@using LookEach.User.Model
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@inject ProtectedSessionStorage ProtectedSessionStore
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<PageTitle>LookEach - Trang Chủ</PageTitle>
+
+<div class="home-slides owl-carousel owl-theme" style="display: inline !important;">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="main-banner banner-bg2">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container">
+                                <div class="main-banner-content">
+                                    <span class="sub-title">Mua Sắm Trực Tuyến!</span>
+                                    <h1>Look Each!</h1>
+                                    <p>'Nơi tái tạo vẻ đẹp và biến nó thành phong cách'</p>
+                                    <div class="btn-box">
+                                        <a href="/LookEach/Product/2" class="default-btn">Thời Trang Nam</a>
+                                        <a href="/LookEach/Product/3" class="optional-btn">Thời Trang Nữ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="main-banner banner-bg1">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container">
+                                <div class="main-banner-content">
+                                    <span class="sub-title">Ưu Đãi Độc Quyền!</span>
+                                    <h1>Mùa Hè 2024!</h1>
+                                    <p>Ưu đãi mùa hè năm 2024 'Những thứ được giảm giá'</p>
+                                    <div class="btn-box">
+                                        <a href="/LookEach/Product" class="optional-btn" style="margin: 0;">
+                                            Khám Phá
+                                            Ngay
+                                        </a>
+                                        <!-- <a href="products-left-sidebar.html" ></a>        -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="main-banner banner-bg3">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="container">
+                                <div class="main-banner-content">
+
+                                    <span class="sub-title">Thời Trang Đẳng Cấp!</span>
+                                    <h1>Cá Nhân Hóa!</h1>
+                                    <p>Với hàng ngàn món đồ thời trang 2-hand, từ vintage đến hiện đại.</p>
+                                    <div class="btn-box">
+                                        <a href="/LookEach/Product/1" class="default-btn" style="margin: 0;">
+                                            Thời Trang
+                                            Tổng Hợp
+                                        </a>
+                                        <!-- <a href="products-right-sidebar-2.html" class="optional-btn">Thời Trang Nữ</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+<section class="categories-banner-area pt-100 pb-70" style="padding: 50px !important;">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h2>Danh Mục</h2>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-categories-box">
+                    <img src="assets/img/categories/img2.jpg" alt="image">
+                    <div class="content">
+                        <span>Thời Trang Nam</span>
+                        <!-- <h3>Khám Phá!</h3> -->
+                        <a href="/LookEach/Product/2" class="default-btn">Khám Phá</a>
+                    </div>
+                    <a href="/LookEach/Product/2" class="link-btn"></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-categories-box">
+                    <img src="assets/img/categories/img1.jpg" alt="image">
+                    <div class="content text-white">
+                        <span>Thời Trang Nữ</span>
+                        <!-- <h3>Khám Phá!</h3> -->
+                        <a href="/LookEach/Product/3" class="default-btn">Khám Phá</a>
+                    </div>
+                    <a href="/LookEach/Product/3" class="link-btn"></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-categories-box">
+                    <img src="assets/img/categories/img3.jpg" alt="image">
+                    <div class="content">
+                        <span>Phụ Kiện Thời Trang</span>
+                        <!-- <h3>Must Haves</h3> -->
+                        <a style="pointer-events: none;" href="/LookEach/Product" class="default-btn">Khám Phá</a>
+                    </div>
+                    <a style="pointer-events: none;" href="/LookEach/Product" class="link-btn"></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-categories-box">
+                    <img src="assets/img/categories/img4.jpg" alt="image">
+                    <div class="content text-white">
+                        <span>Thời Trang Tổng Hợp</span>
+                        <!-- <h3>Winter Spring!</h3> -->
+                        <a href="/LookEach/Product/1" class="default-btn">Khám Phá</a>
+                    </div>
+                    <a href="/LookEach/Product/1" class="link-btn"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products-area pb-70" style="padding: 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Flash Sale</h2>
+            <div id="timer" class="flex-wrap d-flex justify-content-center timer" style="margin-top: 15px;">
+                <div id="days" class="align-items-center flex-column d-flex justify-content-center">
+                </div>
+                <div id="hours" class="align-items-center flex-column d-flex justify-content-center">
+                </div>
+                <div id="minutes" class="align-items-center flex-column d-flex justify-content-center">
+                </div>
+                <div id="seconds" class="align-items-center flex-column d-flex justify-content-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="offer-area bg-image1 ptb-100 jarallax" data-jarallax="{&quot;speed&quot;: 0.3}">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-6">
+                <div class="offer-content">
+                    <span class="sub-title">Ưu Đãi Trong Thời Gian Có Hạn!</span>
+                    <h2>-40% OFF</h2>
+                    <p>Nhận Ngay Ưu Đãi Tốt Nhất</p>
+                    <!-- <a href="products-one-row.html" class="default-btn">Discover Now</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<section class="products-area pb-70" style="padding: 0;">
+    <div class="container">
+        <div class="row" id="modal-view-quiz">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img1.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover1.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new-tag">Mới!</div>
+                    </div>
+                    <div class="star-rating" style="width: 150px;">
+                        <div style="position: relative;">
+                            <progress class="progress-custom" max="51" value="15"
+                                      style="position: absolute;"></progress>
+                            <div class="progress-content">Đã bán 15/50</div>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Long Sleeve Leopard T-Shirt</a></h3>
+                        <div class="price">
+                            <span class="old-price">2,000,000 </span>
+                            <span class="new-price"> 1,500,000 VNĐ</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img2.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover2.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="star-rating" style="width: 150px;">
+                        <div style="position: relative;">
+                            <progress class="progress-custom" max="51" value="15"
+                                      style="position: absolute;"></progress>
+                            <div class="progress-content">Đã bán 15/50</div>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetaill">Long Sleeve Leopard T-Shirt</a></h3>
+                        <div class="price">
+                            <span class="old-price">2,000,000 </span>
+                            <span class="new-price"> 1,500,000 VNĐ</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img3.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover3.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="star-rating" style="width: 150px;">
+                        <div style="position: relative;">
+                            <progress class="progress-custom" max="51" value="15"
+                                      style="position: absolute;"></progress>
+                            <div class="progress-content">Đã bán 15/50</div>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Long Sleeve Leopard T-Shirt</a></h3>
+                        <div class="price">
+                            <span class="old-price">2,000,000 </span>
+                            <span class="new-price"> 1,500,000 VNĐ</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img4.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover4.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="star-rating" style="width: 150px;">
+                        <div style="position: relative;">
+                            <progress class="progress-custom" max="51" value="15"
+                                      style="position: absolute;"></progress>
+                            <div class="progress-content">Đã bán 15/50</div>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Long Sleeve Leopard T-Shirt</a></h3>
+                        <div class="price">
+                            <span class="old-price">2,000,000 </span>
+                            <span class="new-price"> 1,500,000 VNĐ</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img5.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover5.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="star-rating" style="width: 150px;">
+                        <div style="position: relative;">
+                            <progress class="progress-custom" max="51" value="15"
+                                      style="position: absolute;"></progress>
+                            <div class="progress-content">Đã bán 15/50</div>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Long Sleeve Leopard T-Shirt</a></h3>
+                        <div class="price">
+                            <span class="old-price">2,000,000 </span>
+                            <span class="new-price"> 1,500,000 VNĐ</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img6.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover6.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new-tag">Mới!</div>
+                    </div>
+                    <div class="star-rating" style="width: 150px;">
+                        <div style="position: relative;">
+                            <progress class="progress-custom" max="51" value="15"
+                                      style="position: absolute;"></progress>
+                            <div class="progress-content">Đã bán 15/50</div>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Long Sleeve Leopard T-Shirt</a></h3>
+                        <div class="price">
+                            <span class="old-price">2,000,000 </span>
+                            <span class="new-price"> 1,500,000 VNĐ</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-title" style="margin: 0;text-align: left;">
+            <a class="view-all" href="/LookEach/Product"><span class="sub-title">Xem Tất Cả</span></a>
+        </div>
+    </div>
+</section>
+
+
+<section class="products-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Tìm Kiếm Hàng Đầu</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img7.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover7.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Tbmpoy Men's Tapered</a></h3>
+                        <div class="price">
+                            <span class="old-price">300,000 VNĐ</span>
+                            <span class="new-price">250,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img8.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover8.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sale-tag">Sale!</div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Sunnyme Women's Ponchos</a></h3>
+                        <div class="price">
+                            <span class="old-price">350,000 VNĐ</span>
+                            <span class="new-price">200,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img9.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover9.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Open Front Knit Sweaters</a></h3>
+                        <div class="price">
+                            <span class="old-price">210,000 VNĐ</span>
+                            <span class="new-price">200,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img10.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover10.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Block Striped Draped</a></h3>
+                        <div class="price">
+                            <span class="new-price">150,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img11.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover11.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Fleece Hooded Sweatshirt</a></h3>
+                        <div class="price">
+                            <span class="new-price">$240</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img12.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover12.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new-tag">New!</div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Women's Modern-Skinny</a></h3>
+                        <div class="price">
+                            <span class="old-price">150,000 VNĐ</span>
+                            <span class="new-price">100,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-title" style="margin: 0;text-align: left;">
+            <a class="view-all" href="/LookEach/Product"><span class="sub-title">Xem Tất Cả</span></a>
+        </div>
+    </div>
+</section>
+
+<section class="products-area pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">Thời Trang 2-Hand Bạn Có Thể Bạn Thích</span>
+            <h2>Gợi Ý Hôm Nay</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img13.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover13.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Sleeve Faux Suede Loose</a></h3>
+                        <div class="price">
+                            <span class="old-price">300,000 VNĐ</span>
+                            <span class="new-price">250,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img14.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover14.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sale-tag">Sale!</div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">T-Shirt Casual Stripe Tunic</a></h3>
+                        <div class="price">
+                            <span class="old-price">210,000 VNĐ</span>
+                            <span class="new-price">200,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img15.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover15.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Chest Cutout Tunics Long</a></h3>
+                        <div class="price">
+                            <span class="old-price">210,000 VNĐ</span>
+                            <span class="new-price">200,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img16.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover16.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Twist Knotted Tops</a></h3>
+                        <div class="price">
+                            <span class="new-price">150,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img17.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover17.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">Premium Lightweight Fleece</a></h3>
+                        <div class="price">
+                            <span class="new-price">240,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-products-box">
+                    <div class="products-image">
+                        <a href="/LookEach/ProductDetail">
+                            <img src="assets/img/products/img18.jpg" class="main-image" alt="image">
+                            <img src="assets/img/products/img-hover18.jpg" class="hover-image" alt="image">
+                        </a>
+                        <div class="products-button">
+                            <ul>
+                                <li>
+                                    <div class="quick-view-btn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
+                                            <i class="bx bx-search-alt"></i>
+                                            <span class="tooltip-label">Xem Nhanh</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new-tag">New!</div>
+                    </div>
+                    <div class="products-content">
+                        <h3><a href="/LookEach/ProductDetail">EcoSmart Fleece Hoodie</a></h3>
+                        <div class="price">
+                            <span class="old-price">150,000 VNĐ</span>
+                            <span class="new-price">100,000 VNĐ</span>
+                        </div>
+                        <div class="star-rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                        <a href="#" class="add-to-cart">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-title" style="margin: 0;text-align: left;">
+            <a class="view-all" href="/LookEach/Product"><span class="sub-title">Xem Tất Cả</span></a>
+        </div>
+    </div>
+</section>
+
+<section class="facility-area pb-70" style="padding: 0;">
+    <div class="container">
+        <div class="facility-slides partner-slides owl-carousel owl-theme" style="display: flex !important; justify-content: space-between; align-items: center;">
+            <div class="single-facility-box">
+                <div class="partner-item">
+                    <a href="#"><img src="assets/img/partner/partner1.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="single-facility-box">
+                <div class="partner-item">
+                    <a href="#"><img src="assets/img/partner/partner2.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="single-facility-box">
+                <div class="partner-item">
+                    <a href="#"><img src="assets/img/partner/partner3.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="single-facility-box">
+                <div class="partner-item">
+                    <a href="#"><img src="assets/img/partner/partner4.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="single-facility-box">
+                <div class="partner-item">
+                    <a href="#"><img src="assets/img/partner/partner5.png" alt="image"></a>
+                </div>
+            </div>
+            <div class="single-facility-box">
+                <div class="partner-item">
+                    <a href="#"><img src="assets/img/partner/partner6.png" alt="image"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">Bài Viết Gần Đây</span>
+            <h2>Blogs</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a href="/LookEach/Blogs">
+                            <img src="assets/img/blog/img1.jpg" alt="image">
+                        </a>
+                        <div class="date">
+                            <span>29-05-2024</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="category">Ý tưởng</span>
+                        <h3><a href="/LookEach/Blogs">Sàn thương mại điện tử second-hand để phát triển cửa hàng - doanh nghiệp</a></h3>
+                        <a href="/LookEach/Blogs" class="details-btn">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a href="/LookEach/Blogs">
+                            <img src="assets/img/blog/img2.jpg" alt="image">
+                        </a>
+                        <div class="date">
+                            <span>29-05-2024</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="category">Voucher</span>
+                        <h3>
+                            <a href="/LookEach/Blogs">Tặng voucher giảm 30% cho đầu tháng 6/2024</a>
+                        </h3>
+                        <a href="/LookEach/Blogs" class="details-btn">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a href="/LookEach/Blogs">
+                            <img src="assets/img/blog/img3.jpg" alt="image">
+                        </a>
+                        <div class="date">
+                            <span>29-05-2024</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <span class="category">Tại sao lại chọn LookEach?</span>
+                        <h3><a href="/LookEach/Blogs">Xu hướng thương mại điện tử mới nhất: Sự gia tăng...</a></h3>
+                        <a href="/LookEach/Blogs" class="details-btn">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-title" style="margin: 0;text-align: left;">
+            <a class="view-all" href="#"><span class="sub-title">Xem Tất Cả</span></a>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="bx bx-x"></i></span>
+            </button>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="products-image">
+                        <img src="assets/img/quick-view-img.jpg" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="products-content">
+                        <h3><a href="#modal-view-quiz">Long Sleeve Leopard T-Shirt</a></h3>
+                        <div class="price">
+                            <span class="old-price">2,000,000</span>
+                            <span class="new-price">1,500,000 VNĐ</span>
+                        </div>
+                        <div class="products-review">
+                            <div class="rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <a href="#modal-view-quiz" class="rating-count">3 Đánh Giá</a>
+                        </div>
+                        <ul class="products-info">
+                            <li><span>Nhà Cung Cấp:</span> <a href="#modal-view-quiz">Lereve</a></li>
+                            <li>
+                                <span>Tình Trạng Còn Hàng:</span> <a href="#modal-view-quiz">
+                                    Còn hàng (7 sản
+                                    phẩm)
+                                </a>
+                            </li>
+                            <li><span>Loại Sản Phẩm:</span> <a href="#modal-view-quiz">Áo thun</a></li>
+                        </ul>
+                        <div class="products-color-switch">
+                            <h4>Màu Sắc:</h4>
+                            <ul>
+                                <li>
+                                    <a href="#modal-view-quiz" data-bs-toggle="tooltip" data-placement="top"
+                                       title="Black" class="color-black"></a>
+                                </li>
+                                <li>
+                                    <a href="#modal-view-quiz" data-bs-toggle="tooltip" data-placement="top"
+                                       title="White" class="color-white"></a>
+                                </li>
+                                <li>
+                                    <a href="#modal-view-quiz" data-bs-toggle="tooltip" data-placement="top"
+                                       title="Green" class="color-green"></a>
+                                </li>
+                                <li>
+                                    <a href="#modal-view-quiz" data-bs-toggle="tooltip" data-placement="top"
+                                       title="Yellow Green" class="color-yellowgreen"></a>
+                                </li>
+                                <li>
+                                    <a href="#modal-view-quiz" data-bs-toggle="tooltip" data-placement="top"
+                                       title="Teal" class="color-teal"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="products-size-wrapper">
+                            <h4>Kích Thước:</h4>
+                            <ul>
+                                <li><a href="#modal-view-quiz">XS</a></li>
+                                <li class="active"><a href="#modal-view-quiz">S</a></li>
+                                <li><a href=" #modal-view-quiz">M</a></li>
+                                <li><a href="#modal-view-quiz">XL</a></li>
+                                <li><a href="#modal-view-quiz">XXL</a></li>
+                            </ul>
+                        </div>
+                        <div class="products-add-to-cart">
+                            <div class="input-counter">
+                                <span class="minus-btn"><i class="bx bx-minus"></i></span>
+                                <input type="text" value="1">
+                                <span class="plus-btn"><i class="bx bx-plus"></i></span>
+                            </div>
+                            <button type="submit" class="default-btn">Thêm Vào Giỏ Hàng</button>
+                        </div>
+                        <a href="/LookEach/ProductDetail" class="view-full-info">Xem Chi Tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private Command _cmd { get; set; } = new Command();
+
+    private RoleModel _role { get; set; } = new RoleModel();
+    private string _userId { get; set; } = "fb2f20f5-4948-4c5c-a87d-8b16e36c614f";
+    private SPQuery.SPQuery _spq { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _spq = new SPQuery.SPQuery(JSRuntime);
+        await LoadDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        // var token = SessionService.Get("token");
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // var token = await ProtectedSessionStore.GetAsync<string>("token");
+        // if (token.Value is null)
+        // {
+        //     NavigationManager.NavigateTo("/LookEach/Login");
+        // }
+        // else
+        // {
+        //     var claim = await _cmd.CheckTokenAsync(token.Value.ToString());
+        //     if (claim == null) _userId = string.Empty;
+        //     else
+        //         _userId = claim.Id;
+
+        //     if (!string.IsNullOrEmpty(_userId))
+        //     {
+        //         _role = await _spq.GetRoleAsync(_userId);
+        //         if (_role.Id.ToUpper() != "52AF75C0-B77A-4126-B8D7-B9CE54AD9BCA")
+        //             NavigationManager.NavigateTo("/LookEach/Login");
+        //     }
+        //     else NavigationManager.NavigateTo("/LookEach/Login");
+        // }
+
+        // await base.OnAfterRenderAsync(firstRender);
+    }
+}

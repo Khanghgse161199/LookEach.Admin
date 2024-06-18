@@ -1,0 +1,859 @@
+﻿@page "/LookEach/ProductDetail/{Id}"
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+@using LookEach.User.Component
+@using LookEach.User.DTO
+@using LookEach.User.ViewModel
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@inject ProtectedSessionStorage ProtectedSessionStore
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<PageTitle>LookEach - Chi Tiết Sản Phẩm</PageTitle>
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Long Sleeve Leopard T-Shirt</h2>
+            <ul>
+                <li><a href="/">Trang Chủ</a></li>
+                <li style="color: #47261D;">Chi Tiết Sản Phẩm</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<section class="product-details-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-12">
+                <div class="products-details-image">
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+
+                            @if (_current != null && _current.Files != null)
+                            {
+                                int count = 1;
+                                foreach (var item in _current.Files)
+                                {
+                                    <div class="@(count == 1 ? "carousel-item active" : "carousel-item")">
+                                        <img src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + item.FileId.ToString())" alt="image">
+                                    </div>
+                                    count++;
+                                }
+                            }
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    @*  <div class="slick-thumbs">
+                    <ul>
+                    <li><img src="assets/img/products/img3.jpg" alt="image"></li>
+                    <li><img src="assets/img/products/img4.jpg" alt="image"></li>
+                    <li><img src="assets/img/products/img-hover3.jpg" alt="image"></li>
+                    <li><img src="assets/img/products/img-hover4.jpg" alt="image"></li>
+                    <li><img src="assets/img/products/img7.jpg" alt="image"></li>
+                    </ul>
+                    </div> *@
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                @if (_current != null && !string.IsNullOrEmpty(_current.Id))
+                {
+                    <div class="products-details-desc">
+                        <h3><a>@_current.Name</a></h3>
+                        <div class="price">
+                            <span class="old-price">@((_current.Price + 250).ToString("N0"))</span>
+                            <span class="new-price">@_current.Price.ToString("N0") VNĐ</span>
+                        </div>
+                        <div class="products-review">
+                            <div class="rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                            <a href="#view-quiz" class="rating-count">3 Đánh Giá</a>
+                        </div>
+                        <ul class="products-info" style="margin-top: 10px;">
+                            <li>
+                                <span>
+                                    Chất liệu:
+                                </span>
+                                <a>
+                                    @_current.Material
+                                </a>
+
+                            </li>
+                            <li>
+                                <span>Tình Trạng Còn Hàng: </span>
+                                @if (_current.Quantity > 0)
+                                {
+                                    <a>
+                                        Còn hàng (@_current.Quantity sản
+                                        phẩm)
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a>
+                                        hết hàng (@_current.Quantity sản
+                                        phẩm)
+                                    </a>
+                                }
+                            </li>
+                            <li>
+                                <span>Loại Sản Phẩm: </span>
+                                @if (_current.CategoryId.ToUpper() == "1E6145DA-38A1-434B-B27F-5FF2D15F331C")
+                                {
+                                    <a> Áo - @(_current.ObjectTypeId == 1 ? "Nam/Nữ" : _current.ObjectTypeId == 2 ? "Nam" : _current.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                }
+                                else if (_current.CategoryId.ToUpper() == "3B9F1CB2-1723-4587-9E19-17C147009298")
+                                {
+                                    <a> Quần - @(_current.ObjectTypeId == 1 ? "Nam/Nữ" : _current.ObjectTypeId == 2 ? "Nam" : _current.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                }
+                            </li>
+                        </ul>
+                        <div class="products-color-switch">
+                            <h4>Màu Sắc:</h4>
+                            <ul>
+                                @if (_current.ColorChoices != null)
+                                {
+                                    foreach (var item in _current.ColorChoices)
+                                    {
+                                        <ColorProduct Code="@item.Name"></ColorProduct>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <div class="products-size-wrapper">
+                            <h4>Kích Thước:</h4>
+                            <ul>
+                                @if (_current.SizeChoices != null)
+                                {
+                                    foreach (var item in _current.SizeChoices)
+                                    {
+                                        if (item == _size)
+                                        {
+                                            <li class="active"><a style="cursor: pointer;" onclick="@(async ()=> await SizeChanged(item))">@item.Name.Split(" ")[0]</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a style="cursor: pointer;" onclick="@(async ()=> await SizeChanged(item))">@item.Name.Split(" ")[0]</a></li>
+                                        }
+
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <div class="products-info-btn">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">
+                                <i class="bx bx-crop"></i>Hướng Dẫn
+                            </a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#productsShippingModal">
+                                <i class="bx bxs-truck"></i> Vận Chuyển
+                            </a>
+                            <a href="/LookEach/Contact"><i class="bx bx-envelope"></i> Hỗ Trợ</a>
+                        </div>
+                        <div class="products-add-to-cart">
+                            <div class="input-counter">
+                                <span class="minus-btn" onclick="@(() => AmounChanged(false))"><i class="bx bx-minus"></i></span>
+                                <input type="number" value="@_amount">
+                                <span class="plus-btn" onclick="@(() => AmounChanged(true))"><i class="bx bx-plus"></i></span>
+                            </div>
+                            <button type="button" class="default-btn" onclick="@(async ()=> AddToCart())" data-bs-dismiss="modal" aria-label="Close">Thêm Vào Giỏ Hàng</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="tab products-details-tab">
+            <ul class="tabs">
+                <li>
+                    <a style="cursor: pointer;" onclick="@(() => TabChanged(1))">
+                        <div class="dot"></div> @_currenShop.Name
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor: pointer;" onclick="@(() => TabChanged(2))">
+                        <div class="dot"></div> Chi Tiết Sản Phẩm
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor: pointer;" onclick="@(() => TabChanged(3))">
+                        <div class="dot"></div> Mô Tả Sản Phẩm
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor: pointer;" onclick="@(() => TabChanged(4))">
+                        <div class="dot"></div> Xuất Xứ Sản Phẩm
+                    </a>
+                </li>
+                <li>
+                    <a style="cursor: pointer;" onclick="@(() => TabChanged(5))">
+                        <div class="dot"></div> Đánh Giá Sản Phẩm
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                @{
+                    switch (_index)
+                    {
+                        case 1:
+                            <div class="tabs-item">
+                                <div class="products-details-tab-content">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="prev-link-wrapper">
+                                                <div class="info-prev-link-wrapper">
+                                                    <a href="/LookEach/Shop/@_currenShop.Id">
+                                                        <span class="image-prev">
+                                                            <img src="@(_currenShop.FileId > 0 ? NavigationManager.BaseUri + "api/Files/File?FileID=" + _currenShop.FileId.ToString() : "assets/img/LE-Logo.jpg")" alt="image">
+                                                            <span class="post-nav-title">Xem Shop</span>
+                                                        </span>
+                                                        <span class="prev-link-info-wrapper">
+                                                            <span class="prev-title">@_currenShop.Name</span>
+                                                            <span class="meta-wrapper">
+                                                                <span class="date-post">
+                                                                    Tham Gia: @_currenShop.CreatedOn.ToString("dd/MM/yyyy")
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <ul>
+                                                <li>Đánh Giá: 4.9 trên 5</li>
+                                                <li>Sản Phẩm: @_currenShop.Number</li>
+                                                <li>Thời Gian Phản Hồi: trong vài giờ</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            break;
+                        case 2:
+                            <div class="tabs-item">
+                                <div class="products-details-tab-content">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Màu Sắc: </td>
+                                                    <td>@(_current.ColorChoices != null ? string.Join(", ", _current.ColorChoices.Select(p => p.Name.Split('!')[0])) : "")</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kích Thước:</td>
+                                                    <td>@(_current.SizeChoices != null ? string.Join(", ", _current.SizeChoices.Select(p => p.Name.Split(' ')[0])) : "")</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Vật Liệu:</td>
+                                                    <td>@(!string.IsNullOrEmpty(_current.Material) ? _current.Material : "Chưa có thông tin")</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Chiều Cao:</td>
+                                                    <td>@_current.Height cm”</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Vòng Ngực:</td>
+                                                    <td>@_current.Circumference cm”</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Vòng Eo:</td>
+                                                    <td>@(_current.Waist) cm”</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Hông:</td>
+                                                    <td>@_current.Hips cm”</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            break;
+                        case 3:
+                            <div class="tabs-item">
+                                <div class="products-details-tab-content">
+                                    <p>
+                                        @_current.Description
+                                    </p>
+                                </div>
+                            </div>
+                            break;
+                        case 4:
+                            <div class="tabs-item">
+                                <div class="products-details-tab-content">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Xuất Xứ</td>
+                                                    <td>@_current.Origin</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            break;
+                        case 5:
+
+                            <div class="tabs-item">
+                                <div class="products-details-tab-content">
+                                    <div class="products-review-form">
+                                        <h3>Khách Hàng Đánh Giá</h3>
+                                        <div class="review-title">
+                                            <div class="rating">
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bx-star"></i>
+                                            </div>
+                                            <p>Dựa Trên 3 Đánh Giá</p>
+
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView2"
+                                               class="default-btn">Đánh Giá</a>
+                                        </div>
+                                        <div class="review-comments">
+                                            <div class="review-item">
+                                                <div class="rating">
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bx-star"></i>
+                                                </div>
+
+                                                <span><strong>Admin</strong> on <strong>Sep 21, 2021</strong></span>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                    quis nostrud exercitation.
+                                                </p>
+                                            </div>
+                                            <div class="review-item">
+                                                <div class="rating">
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bx-star"></i>
+                                                </div>
+
+                                                <span><strong>Admin</strong> on <strong>Sep 21, 2021</strong></span>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                    quis nostrud exercitation.
+                                                </p>
+                                            </div>
+                                            <div class="review-item">
+                                                <div class="rating">
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bxs-star"></i>
+                                                    <i class="bx bx-star"></i>
+                                                </div>
+
+                                                <span><strong>Admin</strong> on <strong>Sep 21, 2021</strong></span>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                    quis nostrud exercitation.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            break;
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="related-products">
+        <div class="container">
+            <div class="section-title">
+                <!-- <span class="sub-title">Our Shop</span> -->
+                <h2>Sản Phẩm Tương Tự</h2>
+            </div>
+            <div class="products-slides owl-theme">
+                <div class="row">
+                    @{
+                        if (_products != null && _products.Count() > 0)
+                        {
+                            foreach (var item in _products)
+                            {
+                                <div class="col-lg-4 col-md-4 col-sm-4 products-col-item">
+                                    <div class="single-products-box">
+                                        <div class="products-image">
+                                            <a href="/LookEach/ProductDetail/@item.Id" style="width: 416px; height: 416px;">
+                                                <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (item.Files[0] != null ? item.Files[0].FileId.ToString() : "0"))" class="main-image" alt="image">
+                                                <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (item.Files[2] != null ? item.Files[2].FileId.ToString() : "0"))" class="hover-image" alt="image">
+                                            </a>
+                                            <div class="products-button">
+                                                <ul>
+                                                    <li>
+                                                        <div class="quick-view-btn">
+                                                            <a style="cursor: pointer;" onclick="@(async ()=> ViewQuiz(item.Id))">
+                                                                <i class="bx bx-search-alt"></i>
+                                                                <span class="tooltip-label">Xem Nhanh</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            @if (item.CreatedOn.Date >= DateTime.Now.Date && item.CreatedOn.Date <= DateTime.Now.AddDays(2).Date)
+                                            {
+                                                <div class="new-tag">Mới!</div>
+                                            }
+
+                                        </div>
+                                        <div class="products-content">
+                                            <h3><a href="/LookEach/ProductDetail/@item.Id">@item.Name</a></h3>
+                                            <div class="price">
+                                                <!-- <span class="old-price">2,000,000 </span> -->
+                                                <span class="new-price"> @item.Price.ToString("N0") VNĐ</span>
+                                            </div>
+                                            <div class="star-rating">
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                            </div>
+                                            <a href="/LookEach/ProductDetail/@item.Id" class="add-to-cart">Xem Chi Tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div>
+                                <h4>Không Có Sản Phẩm Tương Tự</h4>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade sizeGuideModal" id="sizeGuideModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="bx bx-x"></i></span>
+            </button>
+            <div class="modal-sizeguide">
+                <h3>Hướng Dẫn Kích Thước</h3>
+                <p>Đây là bảng chuyển đổi gần đúng để giúp bạn tìm kích thước của mình.</p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Giới Tính</th>
+                                <th>Chiều Cao</th>
+                                <th>Cân Nặng</th>
+                                <th>Size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nam</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>M</td>
+                            </tr>
+                            <tr>
+                                <td>Nam</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>L</td>
+                            </tr>
+                            <tr>
+                                <td>Nam</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>XL</td>
+                            </tr>
+                            <tr>
+                                <td>Nam</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>XXL</td>
+                            </tr>
+                            <tr>
+                                <td>Nữ</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>M</td>
+                            </tr>
+                            <tr>
+                                <td>Nữ</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>L</td>
+                            </tr>
+                            <tr>
+                                <td>Nữ</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>XL</td>
+                            </tr>
+                            <tr>
+                                <td>Nữ</td>
+                                <td>172</td>
+                                <td>50</td>
+                                <td>XXL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade productsShippingModal" id="productsShippingModal" tabindex="-1" role="dialog"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="bx bx-x"></i></span>
+            </button>
+            <div class="shipping-content">
+                <h3>Vận Chuyển</h3>
+                <ul>
+                    <li>Miễn phí vận chuyển trong vòng 1 đến 7 ngày làm việc</li>
+                    <li>Nhận hàng tại cửa hàng trong vòng 1 đến 7 ngày làm việc</li>
+                    <li>Tùy chọn giao hàng vào ngày hôm sau và chuyển phát nhanh cũng có sẵn</li>
+                    <li>
+                        Hàng mua được giao trong hộp màu cam buộc bằng ruy băng Bolduc, ngoại trừ một số mặt hàng
+                    </li>
+                </ul>
+                <h3>Trả lại và trao đổi</h3>
+                <ul>
+                    <li>Dễ dàng và miễn phí, trong vòng 14 ngày</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button id="tmp-vw" data-bs-toggle="modal" data-bs-target="#productsQuickView" style="display: none;">
+    Tmp
+</button>
+<div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="bx bx-x"></i></span>
+            </button>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="products-image" style="width:416px ;height:416px;">
+                        @if (_productChoice != null && !string.IsNullOrEmpty(_productChoice.Id))
+                        {
+                            <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (_productChoice.Files[1] != null ? _productChoice.Files[1].FileId.ToString() : "0"))" class="main-image" alt="image">
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6" id="view-quiz" style="padding-left: 30px;">
+                    @if (_productChoice != null && !string.IsNullOrEmpty(_productChoice.Id))
+                    {
+                        <div class="products-content">
+                            <h3><a href="@($"/LookEach/ProductDetail/{_productChoice.Id}")">@_productChoice.Name</a></h3>
+                            <div class="price">
+                                <span class="old-price">@((_productChoice.Price + 250).ToString("N0"))</span>
+                                <span class="new-price">@_productChoice.Price.ToString("N0") VNĐ</span>
+                            </div>
+                            <div class="products-review">
+                                <div class="rating">
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                </div>
+                                <a href="#view-quiz" class="rating-count">3 Đánh Giá</a>
+                            </div>
+                            <ul class="products-info" style="margin-top: 10px;">
+                                <li>
+                                    <span>
+                                        Chất liệu:
+                                    </span>
+                                    <a>
+                                        @_productChoice.Material
+                                    </a>
+
+                                </li>
+                                <li>
+                                    <span>Tình Trạng Còn Hàng: </span>
+                                    @if (_productChoice.Quantity > 0)
+                                    {
+                                        <a>
+                                            Còn hàng (@_productChoice.Quantity sản
+                                            phẩm)
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a>
+                                            hết hàng (@_productChoice.Quantity sản
+                                            phẩm)
+                                        </a>
+                                    }
+                                </li>
+                                <li>
+                                    <span>Loại Sản Phẩm: </span>
+                                    @if (_productChoice.CategoryId.ToUpper() == "1E6145DA-38A1-434B-B27F-5FF2D15F331C")
+                                    {
+                                        <a> Áo - @(_productChoice.ObjectTypeId == 1 ? "Nam/Nữ" : _productChoice.ObjectTypeId == 2 ? "Nam" : _productChoice.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                    }
+                                    else if (_productChoice.CategoryId.ToUpper() == "3B9F1CB2-1723-4587-9E19-17C147009298")
+                                    {
+                                        <a> Quần - @(_productChoice.ObjectTypeId == 1 ? "Nam/Nữ" : _productChoice.ObjectTypeId == 2 ? "Nam" : _productChoice.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                    }
+                                </li>
+                            </ul>
+                            <div class="products-color-switch">
+                                <h4>Màu Sắc:</h4>
+                                <ul>
+                                    @if (_productChoice.ColorChoices != null)
+                                    {
+                                        foreach (var item in _productChoice.ColorChoices)
+                                        {
+                                            <ColorProduct Code="@item.Name"></ColorProduct>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="products-size-wrapper">
+                                <h4>Kích Thước:</h4>
+                                <ul>
+                                    @if (_productChoice.SizeChoices != null)
+                                    {
+                                        foreach (var item in _productChoice.SizeChoices)
+                                        {
+                                            if (item == _sizeVW)
+                                            {
+                                                <li class="active"><a style="cursor: pointer;" onclick="@(async ()=> await SizeChangedVW(item))">@item.Name.Split(" ")[0]</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a style="cursor: pointer;" onclick="@(async ()=> await SizeChangedVW(item))">@item.Name.Split(" ")[0]</a></li>
+                                            }
+
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="products-add-to-cart">
+                                <div class="input-counter">
+                                    <span class="minus-btn" onclick="@(() => AmounChangedVW(false))"><i class="bx bx-minus"></i></span>
+                                    <input type="number" value="@_amountVW">
+                                    <span class="plus-btn" onclick="@(() => AmounChangedVW(true))"><i class="bx bx-plus"></i></span>
+                                </div>
+                                <button type="button" class="default-btn" onclick="@(async ()=> AddToCartVW())" data-bs-dismiss="modal" aria-label="Close">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade productsQuickView" id="productsQuickView2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="bx bx-x"></i></span>
+            </button>
+            <div class="row align-items-center">
+                <div class="review-form">
+                    <h4>Đánh Giá Sản Phẩm</h4>
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <textarea name="review-body" id="review-body" cols="30" rows="6"
+                                              placeholder="Hãy chia sẻ cảm nghĩ của bạn về sản phẩm này."
+                                              class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <br>
+                <div class="col-lg-12 col-md-12"></div>
+                <div style="display: flex; justify-content: flex-start;">
+                    <div class="rate" style="padding: 0;">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-12 col-md-12">
+                <div style="display: flex; justify-content: flex-end;">
+                    <button type="submit" class="optional-btn">Hoàn Thành</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private SPQuery.SPQuery _spq { get; set; }
+
+    private int _index { get; set; } = 1;
+    private int _amount { get; set; } = 1;
+    private int _amountVW { get; set; } = 1;
+    private string _userId { get; set; } = "fb2f20f5-4948-4c5c-a87d-8b16e36c614f";
+
+    private Model.Size _size { get; set; } = new Model.Size();
+    private Model.Size _sizeVW { get; set; } = new Model.Size();
+
+    private ProductDetailViewMode _current { get; set; } = new ProductDetailViewMode();
+    private List<ProductDetailViewMode> _products = new List<ProductDetailViewMode>();
+    private ProductDetailViewMode _productChoice { get; set; } = new ProductDetailViewMode();
+    private ShopDTO _currenShop { get; set; } = new ShopDTO();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        _spq = new SPQuery.SPQuery(JSRuntime);
+        await LoadDataAsync();
+        await base.OnParametersSetAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        _current = await _spq.GetProductDetailAsync(_userId, Id);
+        _currenShop = await _spq.GetShopAsync(_current.CreatedBy);
+        _products = (await _spq.GetTopProductByShopAsync(_current.CreatedBy)).Where(p => p.Id.ToUpper() != Id.ToUpper()).ToList();
+    }
+
+    private async Task AddToCart()
+    {
+        try
+        {
+            int amount = await _spq.SaveCartAsync(_userId, _current.Id, _size.Id, _amount);
+            _amountVW = 1;
+            _size = new Model.Size();
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 1, "Thêm vào giỏ hàng thành công");
+            await JSRuntime.InvokeVoidAsync("UpdateCartCount", amount);
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, ex.Message.ToString());
+        }
+    }
+
+    private async Task SizeChanged(Model.Size size)
+    {
+        if (size != null)
+        {
+            _size = size;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task AmounChanged(bool inscrease)
+    {
+        _amount = inscrease ? _amount + 1 : _amount - 1;
+        if (_amount < 1)
+            _amount = 1;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task TabChanged(int tab)
+    {
+        _index = tab;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    //View-Quiz
+    private async Task ViewQuiz(string proId)
+    {
+        var current = _products.Where(p => p.Id == proId).FirstOrDefault();
+        if (current != null)
+        {
+            _productChoice = current;
+            _amountVW = 1;
+            _sizeVW = new Model.Size();
+            await InvokeAsync(StateHasChanged);
+            await JSRuntime.InvokeVoidAsync("OpenViewQuiz");
+        }
+    }
+
+    private async Task AddToCartVW()
+    {
+        try
+        {
+            int amount = await _spq.SaveCartAsync(_userId, _productChoice.Id, _sizeVW.Id, _amountVW);
+            _productChoice = new ProductDetailViewMode();
+            _amountVW = 1;
+            _sizeVW = new Model.Size();
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 1, "Thêm vào giỏ hàng thành công");
+            await JSRuntime.InvokeVoidAsync("UpdateCartCount", amount);
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, ex.Message.ToString());
+        }
+    }
+
+    private async Task SizeChangedVW(Model.Size size)
+    {
+        if (size != null)
+        {
+            _sizeVW = size;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task AmounChangedVW(bool inscrease)
+    {
+        _amountVW = inscrease ? _amountVW + 1 : _amountVW - 1;
+        if (_amountVW < 1)
+            _amountVW = 1;
+        await InvokeAsync(StateHasChanged);
+    }
+}

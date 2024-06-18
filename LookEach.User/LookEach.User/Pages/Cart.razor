@@ -1,0 +1,177 @@
+﻿@page "/LookEach/Cart"
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+@using LookEach.User.Component
+@using LookEach.User.ViewModel
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@using Newtonsoft.Json
+@inject ProtectedSessionStorage ProtectedSessionStore
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<PageTitle>LookEach - Thanh Toán</PageTitle>
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <!-- <h2>Đăng ký</h2> -->
+            <ul>
+                <li><a href="/">Trang Chủ</a></li>
+                <li style="color: #47261D;">Giỏ Hàng</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<section class="cart-area ptb-100">
+    <div class="container">
+        <form>
+            <div class="cart-table table-responsive" style="overflow: hidden !important;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sản Phẩm</th>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Số Lượng</th>
+                            <th scope="col">Tổng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (_cartGroupings != null)
+                            {
+                                foreach (var item in _cartGroupings)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                @item.Key.ToString()
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div style="display: flex; justify-content: flex-end;padding-right: 2px;">
+                                                @*                <a href="#" class="remove">Xóa</a> *@
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    foreach (var pro in item)
+                                    {
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <a href="#">
+                                                    <img src="@(pro.Files != null ? NavigationManager.BaseUri + "api/Files/File?FileID=" + pro.Files[0].FileId.ToString() : "0")" alt="item">
+                                                </a>
+                                            </td>
+                                            <td class="product-name">
+                                                <a href="#">@pro.ProductName</a>
+                                                <ul>
+                                                    <li>Màu sắc: <span>@(pro.ColorChoices != null ? string.Join(", ", pro.ColorChoices.Select(p => p.Name.Split('!')[0])) : "")</span></li>
+                                                    <li>Kích thước: <span>@pro.SizeName</span></li>
+                                                    <li>Cất liệu: <span>@pro.Material</span></li>
+                                                </ul>
+                                            </td>
+                                            <td class="product-price">
+                                                <span class="unit-amount">@pro.Price.ToString("N0") VNĐ</span>
+                                            </td>
+                                            <td class="product-quantity">
+                                                <div class="input-counter">
+                                                    @*    <span class="minus-btn"><i class="bx bx-minus"></i></span>*@
+                                                    <input type="text" min="1" value="@pro.Amount" style="pointer-events: none;">
+                                                    @*  <span class="plus-btn"><i class="bx bx-plus"></i></span> *@
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal">
+                                                <span class="subtotal-amount">@((pro.Amount * pro.Price).ToString("N0")) VNĐ</span>
+                                                <a style="cursor: pointer;" onclick="@(async ()=> DeleteItem(pro.ProductId, pro.SizeId))" class="remove"><i class="bx bx-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="cart-buttons" id="update">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 col-sm-12 col-md-12 text-end">
+                        @if (_carts != null && _carts.Count() > 0)
+                        {
+                            <a style="cursor: pointer;" onclick="@(async ()=> ClearCarts())" class="optional-btn">Xóa Giỏ Hàng</a>
+                            <a style="cursor: pointer;" onclick="@(async ()=> OrderNow())" class="default-btn">Đặt Hàng</a>
+                        }
+                        else
+                        {
+                            <a href="/" class="optional-btn">Quay Lại</a>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="cart-totals">
+                <h3>Tổng Chi Phí Giỏ Hàng</h3>
+                <ul>
+                    <li>Subtotal <span>1,500,000 VNĐ</span></li>
+                    <li>Shipping <span>30,000 VNĐ</span></li>
+                    <li>Total <span>1,250,000 VNĐ</span></li>
+                </ul>
+                <a href="#" class="default-btn">Proceed to Checkout</a>
+            </div> -->
+        </form>
+    </div>
+</section>
+
+@code {
+    private SPQuery.SPQuery _spq { get; set; }
+
+    private List<CartDetailViewModel> _carts { get; set; } = new List<CartDetailViewModel>();
+
+    private string _userId { get; set; } = "fb2f20f5-4948-4c5c-a87d-8b16e36c614f";
+    private IEnumerable<IGrouping<string, CartDetailViewModel>> _cartGroupings { get; set; } = new List<IGrouping<string, CartDetailViewModel>>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _spq = new SPQuery.SPQuery(JSRuntime);
+        await LoadDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        _carts = await _spq.LoadCartDetailAsync(_userId);
+        _cartGroupings = _carts.GroupBy(p => p.ShopName);
+    }
+
+
+    private async Task DeleteItem(string proId, string sizeId)
+    {
+        bool delete = await _spq.DeteleItemCartAsync(_userId, proId, sizeId);
+        if (!delete)
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, "Lỗi hệ thống - Xóa không thành công!");
+        else
+        {
+            await LoadDataAsync();
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task ClearCarts()
+    {
+        bool clear = await _spq.ClearCartAsync(_userId);
+        if (clear)
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 1, "Xóa giỏ hàng thành công");
+        }
+        else await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, "Lỗi hệ thống - Xóa không thành công!");
+        await LoadDataAsync();
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task OrderNow()
+    {
+        NavigationManager.NavigateTo("/LookEach/Payment");
+    }
+}

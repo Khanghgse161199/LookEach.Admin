@@ -1,0 +1,590 @@
+﻿@page "/LookEach/Shop/{Id}"
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+@using LookEach.User.Component
+@using LookEach.User.DTO
+@using LookEach.User.ViewModel
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@inject ProtectedSessionStorage ProtectedSessionStore
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<PageTitle>LookEach - Cửa Hàng</PageTitle>
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>@_currenShop.Name</h2>
+            <ul>
+                <li><a href="/">Trang Chủ</a></li>
+                <li style="color: #47261D;">Cửa Hàng</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="categories-banner-area pt-100 pb-70" style="padding-top: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="middle-container d-flex justify-content-between align-items-center mt-3 p-2">
+                        <div class="top-container">
+                            <img src="@(_currenShop.FileId > 0 ? NavigationManager.BaseUri + "api/Files/File?FileID=" + _currenShop.FileId : "assets/img/LE-Logo.jpg")" class="img-fluid profile-image" width="70">
+                            <div class="ml-3" style="padding-left: 15px;">
+                                <h5 class="name">@_currenShop.Name</h5>
+                                <p class="mail">@_currenShop.Email</p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column text-right mr-2">
+                            <div style="display: flex;justify-content: flex-end;align-items: center;">
+                                <span class="amount"></span>
+                                <span class="dollar-sign">
+                                    @if (!_currenShop.IsFollow)
+                                    {
+                                        <button class="optional-btn" onclick="@(async ()=> FollowEven(true))">+ Theo Dõi</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="optional-btn" onclick="@(async ()=> FollowEven(false))">+ Hủy Theo Dõi</button>
+                                    }
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recent-border mt-4">
+                        <span class="recent-orders">Thông Tin</span>
+                    </div>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="wishlist-border pt-2">
+                                <span class="wishlist">
+                                    <span style="color: #988f8f;">
+                                        <i class="fa-regular fa-star"
+                                           style="position: relative;top: -2px;"></i> Đánh Giá:
+                                    </span> 4.9/5
+                                </span>
+                            </div>
+                            <div class="fashion-studio-border pt-2">
+                                <span class="wishlist">
+                                    <span style="color: #988f8f;">
+                                        <i class="fa-regular fa-circle-down"
+                                           style="position: relative;top: -1px;"></i> Sản Phẩm:
+                                    </span>
+                                    @_currenShop.Number
+                                </span>
+                            </div>
+                            <div class="fashion-studio-border pt-2">
+                                <span class="wishlist">
+                                    <span style="color: #988f8f;">
+                                        <i class="fa-regular fa-circle-user"
+                                           style="position: relative;top: -1px;"></i> Người Theo Dõi:
+                                    </span>
+                                    @_currenShop.NumberFollow
+                                </span>
+                            </div>
+                            <div class="fashion-studio-border pt-2">
+                                <span class="wishlist">
+
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="fashion-studio-border pt-2">
+                                <span class="wishlist">
+                                    <span style="color: #988f8f;">
+                                        <i class="fa-solid fa-rotate-right"></i> Thời Gian Phản
+                                        Hồi:
+                                    </span> trong vài giờ
+                                </span>
+                            </div>
+                            <div class="fashion-studio-border pt-2">
+                                <span class="wishlist">
+                                    <span style="color: #988f8f;">
+                                        <i class="fa-solid fa-check"></i> Tham Gia:
+                                    </span> @_currenShop.CreatedOn.ToString("dd/MM/yyyy")
+                                </span>
+                            </div>
+                            <div class="fashion-studio-border pt-2">
+                                <span class="wishlist">
+                                    <span style="color: #988f8f;">
+                                        <i class="bx bx-map"></i> Địa Chỉ:
+                                    </span> @_currenShop.Address
+                                </span>
+                            </div>
+                            <div style="margin-top: 5px; display: flex;justify-content: flex-start;">
+                                <div class="fashion-studio-border pt-2" style="padding-right: 15px;">
+                                    <a class="optional-btn" href="tel:@_currenShop.Phone">Liên Hệ: @_currenShop.Phone</a>
+                                    <span class="fashion-studio"></span>
+                                </div>
+                                <div class="fashion-studio-border pt-2">
+                                    <button class="default-btn chatbox-open-default">Chat</button>
+                                </div>
+                                <div class="fashion-studio-border pt-2">
+                                    <span class="current-balance" style="padding-right: 5px;">
+                                        <div class="dollar-div px-3">
+                                            <div class="round-div"><i class="fa fa-dollar dollar"></i></div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products-area pt-100 pb-70" style="padding-top: 0;">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title"></span>
+            <h2>Tất Cả Sản Phẩm</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="products-filter-options">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-4 col-md-4">
+                            <p>Trang 1 – 12 of 100</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="d-lg-flex d-md-flex align-items-center">
+                                <span class="sub-title d-lg-none">
+                                    <a href="#" data-bs-toggle="modal"
+                                       data-bs-target="#productsFilterModal">
+                                        <i class="bx bx-filter-alt"></i>
+                                        Filter
+                                    </a>
+                                </span>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <aside class="widget-area">
+                                <section class="widget widget_search">
+                                    <form class="search-form">
+                                        <label>
+                                            <span class="screen-reader-text">Search for:</span>
+                                            <input type="search" class="search-field"
+                                                   placeholder="Tìm kiếm sản phẩm...">
+                                        </label>
+                                    </form>
+                                </section>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+                <div id="products-collections-filter" class="row">
+                    @{
+                        if (_products != null && _products.Count() > 0)
+                        {
+                            foreach (var item in _products)
+                            {
+                                <div class="col-lg-4 col-md-4 col-sm-4 products-col-item">
+                                    <div class="single-products-box">
+                                        <div class="products-image">
+                                            <a href="/LookEach/ProductDetail/@item.Id" style="width: 416px; height: 416px;">
+                                                <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (item.Files[0] != null ? item.Files[0].FileId.ToString() : "0"))" class="main-image" alt="image">
+                                                <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (item.Files[2] != null ? item.Files[2].FileId.ToString() : "0"))" class="hover-image" alt="image">
+                                            </a>
+                                            <div class="products-button">
+                                                <ul>
+                                                    <li>
+                                                        <div class="quick-view-btn">
+                                                            <a style="cursor: pointer;" onclick="@(async ()=> ViewQuiz(item.Id))">
+                                                                <i class="bx bx-search-alt"></i>
+                                                                <span class="tooltip-label">Xem Nhanh</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            @if (item.CreatedOn.Date >= DateTime.Now.Date && item.CreatedOn.Date <= DateTime.Now.AddDays(2).Date)
+                                            {
+                                                <div class="new-tag">Mới!</div>
+                                            }
+
+                                        </div>
+                                        <div class="products-content">
+                                            <h3><a href="/LookEach/ProductDetail/@item.Id">@item.Name</a></h3>
+                                            <div class="price">
+                                                <!-- <span class="old-price">2,000,000 </span> -->
+                                                <span class="new-price"> @item.Price.ToString("N0") VNĐ</span>
+                                            </div>
+                                            <div class="star-rating">
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                            </div>
+                                            <a href="/LookEach/ProductDetail/@item.Id" class="add-to-cart">Xem Chi Tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div>
+                                <h4>Không Có Sản Phẩm</h4>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="pagination-area text-center">
+                    <a href="#" class="prev page-numbers"><i class="bx bx-chevron-left"></i></a>
+                    <span class="page-numbers current" aria-current="page">1</span>
+                    <a href="#" class="page-numbers">2</a>
+                    <a href="#" class="page-numbers">3</a>
+                    <a href="#" class="page-numbers">4</a>
+                    <a href="#" class="page-numbers">5</a>
+                    <a href="#" class="next page-numbers"><i class="bx bx-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="window-chat">
+    <section class="chatbox-popup">
+        <header class="chatbox-popup__header" style="justify-content: space-between;align-items: center;">
+            <div style="display: flex;justify-content: flex-start;align-items: center;">
+                <aside style="flex:3">
+                    <i class="fa fa-user-circle fa-3x chatbox-popup__avatar" aria-hidden="true"></i>
+                </aside>
+                <div style="padding-left: 15px;">
+                    <h6 style="margin: 0;color: #ffffff;">@_currenShop.Name </h6>
+                    <span>Online 7 phút trước</span>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: flex-end;">
+                <div style="padding-right: 15px;">
+                    <button class="chatbox-maximize">
+                        <i class="fa fa-window-maximize"
+                           aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div>
+                    <button class="chatbox-close-header"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </header>
+        <main class="chatbox-popup__main">
+            Hãy hỏi chúng tôi bất cứ điều gì.
+        </main>
+        <footer class="chatbox-popup__footer">
+            <aside style="flex:1;color:#888;text-align:center;">
+                <button style="background: none;padding: 0;">
+                    <i class="fa fa-camera"
+                       aria-hidden="true"></i>
+                </button>
+            </aside>
+            <aside style="flex:10">
+                <textarea type="text" placeholder="Aa" autofocus style="color: #000000;"></textarea>
+            </aside>
+            <aside style="flex:1;color:#888;text-align:center;">
+                <button style="background: none;padding: 0;">
+                    <i class="fa fa-paper-plane"
+                       aria-hidden="true"></i>
+                </button>
+            </aside>
+        </footer>
+    </section>
+    <section class="chatbox-panel">
+        <header class="chatbox-panel__header" style="justify-content: space-between;align-items: center;">
+            <div style="display: flex;justify-content: flex-start;align-items: center;">
+                <aside style="flex:3">
+                    <i class="fa fa-user-circle fa-3x chatbox-popup__avatar" aria-hidden="true"></i>
+                </aside>
+                <div style="padding-left: 15px;">
+                    <h6 style="margin: 0;color: #ffffff;">@_currenShop.Name </h6>
+                    <span>Online 7 phút trước</span>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: flex-end;">
+                <div style="padding-right: 15px;">
+                    <button class="chatbox-minimize">
+                        <i class="fa fa-window-restore"
+                           aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div>
+                    <button class="chatbox-close-header-2"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <main class="chatbox-panel__main" style="flex:1">
+            Hãy hỏi chúng tôi bất cứ điều gì.
+        </main>
+        <footer class="chatbox-panel__footer">
+            <aside style="flex:1;color:#888;text-align:center;">
+                <button style="background: none;padding: 0;">
+                    <i class="fa fa-camera"
+                       aria-hidden="true"></i>
+                </button>
+            </aside>
+            <aside style="flex:10">
+                <textarea type="text" placeholder="Aa" autofocus style="color: #000000;"></textarea>
+            </aside>
+            <aside style="flex:1;color:#888;text-align:center;">
+                <button style="background: none;padding: 0;">
+                    <i class="fa fa-paper-plane"
+                       aria-hidden="true"></i>
+                </button>
+            </aside>
+        </footer>
+    </section>
+</div>
+
+<button id="tmp-vw" data-bs-toggle="modal" data-bs-target="#productsQuickView" style="display: none;">
+    Tmp
+</button>
+<div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="bx bx-x"></i></span>
+            </button>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="products-image" style="width:416px ;height:416px;">
+                        @if (_productChoice != null && !string.IsNullOrEmpty(_productChoice.Id))
+                        {
+                            <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (_productChoice.Files[1] != null ? _productChoice.Files[1].FileId.ToString() : "0"))" class="main-image" alt="image">
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6" id="view-quiz" style="padding-left: 30px;">
+                    @if (_productChoice != null && !string.IsNullOrEmpty(_productChoice.Id))
+                    {
+                        <div class="products-content">
+                            <h3><a href="@($"/LookEach/ProductDetail/{_productChoice.Id}")">@_productChoice.Name</a></h3>
+                            <div class="price">
+                                <span class="old-price">@((_productChoice.Price + 250).ToString("N0"))</span>
+                                <span class="new-price">@_productChoice.Price.ToString("N0") VNĐ</span>
+                            </div>
+                            <div class="products-review">
+                                <div class="rating">
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                </div>
+                                <a href="#view-quiz" class="rating-count">3 Đánh Giá</a>
+                            </div>
+                            <ul class="products-info" style="margin-top: 10px;">
+                                <li>
+                                    <span>
+                                        Chất liệu:
+                                    </span>
+                                    <a>
+                                        @_productChoice.Material
+                                    </a>
+
+                                </li>
+                                <li>
+                                    <span>Tình Trạng Còn Hàng: </span>
+                                    @if (_productChoice.Quantity > 0)
+                                    {
+                                        <a>
+                                            Còn hàng (@_productChoice.Quantity sản
+                                            phẩm)
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a>
+                                            hết hàng (@_productChoice.Quantity sản
+                                            phẩm)
+                                        </a>
+                                    }
+                                </li>
+                                <li>
+                                    <span>Loại Sản Phẩm: </span>
+                                    @if (_productChoice.CategoryId.ToUpper() == "1E6145DA-38A1-434B-B27F-5FF2D15F331C")
+                                    {
+                                        <a> Áo - @(_productChoice.ObjectTypeId == 1 ? "Nam/Nữ" : _productChoice.ObjectTypeId == 2 ? "Nam" : _productChoice.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                    }
+                                    else if (_productChoice.CategoryId.ToUpper() == "3B9F1CB2-1723-4587-9E19-17C147009298")
+                                    {
+                                        <a> Quần - @(_productChoice.ObjectTypeId == 1 ? "Nam/Nữ" : _productChoice.ObjectTypeId == 2 ? "Nam" : _productChoice.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                    }
+                                </li>
+                            </ul>
+                            <div class="products-color-switch">
+                                <h4>Màu Sắc:</h4>
+                                <ul>
+                                    @if (_productChoice.ColorChoices != null)
+                                    {
+                                        foreach (var item in _productChoice.ColorChoices)
+                                        {
+                                            <ColorProduct Code="@item.Name"></ColorProduct>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="products-size-wrapper">
+                                <h4>Kích Thước:</h4>
+                                <ul>
+                                    @if (_productChoice.SizeChoices != null)
+                                    {
+                                        foreach (var item in _productChoice.SizeChoices)
+                                        {
+                                            if (item == _sizeVW)
+                                            {
+                                                <li class="active"><a style="cursor: pointer;" onclick="@(async ()=> await SizeChangedVW(item))">@item.Name.Split(" ")[0]</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a style="cursor: pointer;" onclick="@(async ()=> await SizeChangedVW(item))">@item.Name.Split(" ")[0]</a></li>
+                                            }
+
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="products-add-to-cart">
+                                <div class="input-counter">
+                                    <span class="minus-btn" onclick="@(() => AmounChangedVW(false))"><i class="bx bx-minus"></i></span>
+                                    <input type="number" value="@_amountVW">
+                                    <span class="plus-btn" onclick="@(() => AmounChangedVW(true))"><i class="bx bx-plus"></i></span>
+                                </div>
+                                <button type="button" class="default-btn" onclick="@(async ()=> AddToCartVW())" data-bs-dismiss="modal" aria-label="Close">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var chatbox = jQuery.noConflict();
+    chatbox(() => {
+        chatbox(".chatbox-open-default").click(() => {
+            chatbox(".chatbox-popup, .chatbox-close").fadeIn();
+        }
+        );
+
+        chatbox(".chatbox-close-header").click(() => {
+            chatbox(".chatbox-popup, .chatbox-close").fadeOut();
+        }
+        );
+
+        chatbox(".chatbox-close-header-2").click(() => {
+            chatbox(".chatbox-panel, .chatbox-close").fadeOut();
+            chatbox(".chatbox-open-default").fadeIn();
+            gotop.style.display = "block";
+        });
+
+        chatbox(".chatbox-maximize").click(() => {
+            chatbox(".chatbox-popup, .chatbox-open-default, .chatbox-close").fadeOut();
+            chatbox(".chatbox-panel").fadeIn();
+            chatbox(".chatbox-panel").css({ display: "flex" });
+        });
+
+        chatbox(".chatbox-minimize").click(() => {
+            chatbox(".chatbox-panel").fadeOut();
+            chatbox(".chatbox-popup, .chatbox-open-default, .chatbox-close").fadeIn();
+        });
+    });
+</script>
+@code {
+    [Parameter]
+    public string Id { get; set; } = string.Empty;
+
+    private SPQuery.SPQuery _spq { get; set; }
+    private string _userId { get; set; } = "fb2f20f5-4948-4c5c-a87d-8b16e36c614f";
+
+    private Model.Size _sizeVW { get; set; } = new Model.Size();
+    private int _amountVW { get; set; } = 1;
+
+    private ShopDTO _currenShop { get; set; } = new ShopDTO();
+    private ProductDetailViewMode _productChoice { get; set; } = new ProductDetailViewMode();
+    private List<ProductDetailViewMode> _products = new List<ProductDetailViewMode>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _spq = new SPQuery.SPQuery(JSRuntime);
+        await LoadDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        _currenShop = await _spq.GetShopDetailAsync(_userId, Id);
+        _products = await _spq.GetTopProductByShopAsync(Id);
+    }
+
+    private async Task FollowEven(bool follow)
+    {
+        if (follow)
+        {
+            bool isFollow = await _spq.FoloShopAsync(_userId, Id);
+            if (!isFollow)
+                await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, "Lỗi hệ thống");
+        }
+        else
+        {
+            bool isUnFollow = await _spq.UnFoloShopAsync(_userId, Id);
+            if (!isUnFollow)
+                await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, "Lỗi hệ thống");
+        }
+        _currenShop = await _spq.GetShopAsync(Id);
+        await InvokeAsync(StateHasChanged);
+    }
+
+    //View-Quiz
+    private async Task ViewQuiz(string proId)
+    {
+        var current = _products.Where(p => p.Id == proId).FirstOrDefault();
+        if (current != null)
+        {
+            _productChoice = current;
+            _amountVW = 1;
+            _sizeVW = new Model.Size();
+            await InvokeAsync(StateHasChanged);
+            await JSRuntime.InvokeVoidAsync("OpenViewQuiz");
+        }
+    }
+
+    private async Task AddToCartVW()
+    {
+        try
+        {
+            int amount = await _spq.SaveCartAsync(_userId, _productChoice.Id, _sizeVW.Id, _amountVW);
+            _productChoice = new ProductDetailViewMode();
+            _amountVW = 1;
+            _sizeVW = new Model.Size();
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 1, "Thêm vào giỏ hàng thành công");
+            await JSRuntime.InvokeVoidAsync("UpdateCartCount", amount);
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, ex.Message.ToString());
+        }
+    }
+
+    private async Task SizeChangedVW(Model.Size size)
+    {
+        if (size != null)
+        {
+            _sizeVW = size;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task AmounChangedVW(bool inscrease)
+    {
+        _amountVW = inscrease ? _amountVW + 1 : _amountVW - 1;
+        if (_amountVW < 1)
+            _amountVW = 1;
+        await InvokeAsync(StateHasChanged);
+    }
+}

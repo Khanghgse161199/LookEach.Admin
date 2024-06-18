@@ -1,0 +1,77 @@
+﻿@page "/LookEach/Login"
+@using LookEach.User.API
+@using LookEach.User.DTO
+@using LookEach.User.Model
+@using LookEach.User.Utilites
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@inject ProtectedSessionStorage ProtectedSessionStore
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<PageTitle>LookEach - Đăng Nhập</PageTitle>
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <!-- <h2>Đăng ký</h2> -->
+            <ul>
+                <li><a href="/">Trang Chủ</a></li>
+                <li style="color: #47261D;">Đăng nhập</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="login-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="login-content">
+                    <h2>Login</h2>
+                    <div class="login-form">
+                        <div class="form-group">
+                            <input type="email" @bind-value="_login.Email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" @bind-value="_login.Password" class="form-control" placeholder="Mật khẩu">
+                        </div>
+                        <button type="submit" class="default-btn" onclick="@LoginEven">Đăng nhập</button>
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="new-customer-content">
+                    <h2>Khách Hàng Mới</h2>
+                    <span>Tạo Tài Khoản</span>
+                    <p>
+                        Đăng ký một tài khoản miễn phí tại look-each. Thủ tục đăng kí nhanh chóng và đơn giản. Nó cho phép bạn trở thành
+                        có thể đặt hàng từ các cửa hàng hoặc trở thành người ban. Để bắt đầu mua sắm hoặc bán sản phẩm hãy bấm vào đăng ký
+                    </p>
+                    <a href="/LookEach/SignUp" class="optional-btn">Đăng ký</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@code {
+    private Command _cmd { get; set; } = new Command();
+    private LoginDTO _login { get; set; } = new LoginDTO();
+
+    private async Task LoginEven()
+    {
+        var resopnse = await _cmd.LoginAsync(_login);
+        if (resopnse != null && resopnse.IsSuccess)
+        {
+            //Check Token In Session
+            await ProtectedSessionStore.SetAsync("token", resopnse.Value);
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 1, "Chào mừng bạn đến với Look-Each");
+            NavigationManager.NavigateTo("/");
+        }
+        else await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, "lỗi hệ thống - Đăng nhập khách hàng không thành công!");
+
+    }
+}

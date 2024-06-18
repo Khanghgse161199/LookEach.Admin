@@ -1,0 +1,913 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\LookEach.User.bundle.scp.css",
+      "PackagePath": "staticwebassets\\LookEach.User.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\Demo3\\css\\plugins\\swiper.min.css",
+      "PackagePath": "staticwebassets\\assets\\Demo3\\css\\plugins\\swiper.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\Demo3\\js\\plugins\\jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\Demo3\\js\\plugins\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\Demo3\\js\\plugins\\swiper.min.js",
+      "PackagePath": "staticwebassets\\assets\\Demo3\\js\\plugins\\swiper.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\Demo3\\js\\theme.js",
+      "PackagePath": "staticwebassets\\assets\\Demo3\\js\\theme.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\animate\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\animate\\animate.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\animate\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\animate\\animate.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\boxicons.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\boxicons.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\dark.css",
+      "PackagePath": "staticwebassets\\assets\\css\\dark.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\flaticon.css",
+      "PackagePath": "staticwebassets\\assets\\css\\flaticon.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\magnific-popup.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\meanmenu.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\meanmenu.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\nice-select.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\nice-select.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\owl.video.play.html",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.video.play.html"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\rangeSlider.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\rangeSlider.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\assets\\css\\responsive.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\slick.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\slick.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\style_2.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style_2.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\css\\swiper.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\swiper.min.css"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\assets\\easing\\easing.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\assets\\easing\\easing.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.eot"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.svg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.ttf"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.woff"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\Flaticon.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.woff2"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\Flaticond41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticond41d.eot"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\boxicons.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\boxicons.eot"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\boxicons.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\boxicons.ttf"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\boxicons.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\boxicons.woff"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\boxicons.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\boxicons.woff2"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\fonts\\boxiconsd41d.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\boxiconsd41d.svg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\10.png",
+      "PackagePath": "staticwebassets\\assets\\img\\10.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\11.png",
+      "PackagePath": "staticwebassets\\assets\\img\\11.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\9.png",
+      "PackagePath": "staticwebassets\\assets\\img\\9.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\Default_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\Default_1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\Icon-shopping.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\Icon-shopping.svg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\LE-Logo.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\LE-Logo.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\Logo-LookEach.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\Logo-LookEach.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\Logo-LookEach.jpg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\Logo-LookEach.jpg.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\Logo-Main.png",
+      "PackagePath": "staticwebassets\\assets\\img\\Logo-Main.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\about\\img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\about\\img1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\about\\img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\about\\img2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\banner-img1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner-img1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\banner-img2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner-img2.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bg.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img7.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\blog\\img8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\img8.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\brand\\img1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\brand\\img1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\brand\\img2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\brand\\img2.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\brand\\img3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\brand\\img3.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\brand\\img4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\brand\\img4.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\brand\\img5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\brand\\img5.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\brand\\img6.png",
+      "PackagePath": "staticwebassets\\assets\\img\\brand\\img6.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img10.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img7.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img8.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\categories\\img9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\categories\\img9.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\coming-soon-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\coming-soon-bg.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_10.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_2.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_3.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_4.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_5.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_6.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_6.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_7.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_7.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_8.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_8.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\category_9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\category_9.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-0-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-0-1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-0-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-0-2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-1-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-1-1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-1-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-1-2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-10.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-11.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-2-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-2-1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-2-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-2-2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-3-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-3-1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-3-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-3-2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-7.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-8.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\product-9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\product-9.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\slider_bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\slider_bg.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\demo3\\slideshow-character1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\demo3\\slideshow-character1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\error-404.png",
+      "PackagePath": "staticwebassets\\assets\\img\\error-404.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\france-flag.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\france-flag.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item10.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item11.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item12.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item7.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item8.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\gallery\\item9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\item9.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\germany-flag.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\germany-flag.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\instagram\\Default_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\instagram\\Default_1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\instagram\\Default_2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\instagram\\Default_2.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\instagram\\Default_3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\instagram\\Default_3.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\instagram\\img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\instagram\\img1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\italy-flag.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\italy-flag.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item7.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item8.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\lookbook\\item9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\lookbook\\item9.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\main-banner1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\main-banner1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\main-banner2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\main-banner2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\main-banner3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\main-banner3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\main-banner4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\main-banner4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\main-banner5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\main-banner5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\main-banner6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\main-banner6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\night.png",
+      "PackagePath": "staticwebassets\\assets\\img\\night.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\offer-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\offer-bg.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\offer-bg2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\offer-bg2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\offer\\img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\offer\\img1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\offer\\img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\offer\\img2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\offer\\img3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\offer\\img3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\partner\\partner1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\partner\\partner1.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\partner\\partner2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\partner\\partner2.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\partner\\partner3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\partner\\partner3.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\partner\\partner4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\partner\\partner4.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\partner\\partner5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\partner\\partner5.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\partner\\partner6.png",
+      "PackagePath": "staticwebassets\\assets\\img\\partner\\partner6.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\payment\\expresscard.png",
+      "PackagePath": "staticwebassets\\assets\\img\\payment\\expresscard.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\payment\\mastercard.png",
+      "PackagePath": "staticwebassets\\assets\\img\\payment\\mastercard.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\payment\\mastercard2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\payment\\mastercard2.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\payment\\visa.png",
+      "PackagePath": "staticwebassets\\assets\\img\\payment\\visa.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\payment\\visa2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\payment\\visa2.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover10.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover11.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover12.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover13.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover14.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover15.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover16.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover17.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover18.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover7.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover8.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img-hover9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img-hover9.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img10.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img11.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img12.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img13.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img14.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img15.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img16.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img17.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img18.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img5.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img6.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img7.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img8.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\products\\img9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\img9.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\quick-view-img.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\quick-view-img.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\russia-flag.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\russia-flag.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\spain-flag.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\spain-flag.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\sunny.png",
+      "PackagePath": "staticwebassets\\assets\\img\\sunny.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\us-flag.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\us-flag.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\user1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\user1.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\user2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\user2.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\user3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\user3.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\user4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\user4.jpg"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\img\\white-logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\white-logo.png"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\ajaxchimp.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ajaxchimp.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\contact-form-script.js",
+      "PackagePath": "staticwebassets\\assets\\js\\contact-form-script.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\form-validator.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\form-validator.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\magnific-popup.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\meanmenu.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\meanmenu.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\nice-select.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\nice-select.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\parallax.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\parallax.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\popper.min.html",
+      "PackagePath": "staticwebassets\\assets\\js\\popper.min.html"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\rangeSlider.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\rangeSlider.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\slick.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\slick.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\sticky-sidebar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\sticky-sidebar.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\wow.min.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\wow\\wow.js",
+      "PackagePath": "staticwebassets\\assets\\wow\\wow.js"
+    },
+    {
+      "Id": "E:\\Project Code\\Frontend_Practical\\LookEach.User\\LookEach.User\\wwwroot\\assets\\wow\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\wow\\wow.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.LookEach.User.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.LookEach.User.props",
+      "PackagePath": "build\\LookEach.User.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.LookEach.User.props",
+      "PackagePath": "buildMultiTargeting\\LookEach.User.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.LookEach.User.props",
+      "PackagePath": "buildTransitive\\LookEach.User.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

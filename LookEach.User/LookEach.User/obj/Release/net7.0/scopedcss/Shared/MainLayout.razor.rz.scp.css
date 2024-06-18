@@ -1,0 +1,29 @@
+.page[b-obr3jy8a84] {
+    height: 100%;
+    overflow: hidden;
+    background-color: inherit;
+}
+[b-obr3jy8a84] .page-layout,
+[b-obr3jy8a84] .page-layout > .dxbl-gridlayout-root,
+[b-obr3jy8a84] .layout-item {
+    background-color: var(--bs-body-bg, var(--dxbl-body-bg, #fff));
+}
+
+[b-obr3jy8a84] .content {
+    padding: 1.1rem 2rem 0 2rem;
+    overflow: auto;
+}
+
+@media (max-width: 1199.98px) {
+    [b-obr3jy8a84] .page-layout > .dxbl-gridlayout-root {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+[b-obr3jy8a84] .fit-width {
+    max-width: 100%;
+}
+
+[b-obr3jy8a84] .mw-1100 {
+    max-width: 1100px;
+}

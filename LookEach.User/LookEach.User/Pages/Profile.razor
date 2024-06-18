@@ -1,0 +1,215 @@
+﻿@page "/LookEach/Profile"
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+@using LookEach.User.DTO
+@using LookEach.User.Model
+@using LookEach.User.Utilites
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@inject ProtectedSessionStorage ProtectedSessionStore
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<PageTitle>LookEach - Tài Khoản</PageTitle>
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Hồ Sơ Của Tôi</h2>
+            <ul>
+                <li><a href="/">Trang Chủ</a></li>
+                <li style="color: #47261D;">Tài Khoản Của Tôi</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="categories-banner-area pt-100 pb-70" style="padding-top: 20px;">
+    <div class="row">
+        <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+            <div class="login-brand" style="display: flex; justify-content: center;">
+                <img src="@(_shop != null && _shop.LogoId > 0 ? NavigationManager.BaseUri + "api/Files/File?FileID=" + _shop.LogoId  : "assets/img/LE-Logo.jpg")" alt="logo" width="100" class="shadow-light rounded-circle">
+            </div>
+            <div style="margin-top: 15px; text-align: center;" onclick="WindowOpenEven()">
+                <button class="default-btn">Chọn Ảnh</button>
+                <InputFile OnChange="(InputFileChangeEventArgs e) => OnFileSelected(e)" name="file-input-profile" id="file-input-profile" accept="image/*;capture=camera" style="display: none;" />
+                <p style="margin-top: 5px;">
+                    Dụng lượng file tối đa 1 MB <br>
+                    Định dạng:.JPEG, .PNG
+                </p>
+            </div>
+            <br>
+            <div class="card card-primary">
+                <div class="card-header" style="background-color: #FAF2E7;">
+                    <h6>Quản lý thông tin hồ sơ để bảo mật tài khoản</h6>
+                </div>
+
+                <div class="card-body">
+                    <div>
+                        <div class="row">
+                            <div class="form-group col-12">
+                                <label for="first_name" style="color: #7d7575;">Họ và Tên</label>
+                                <input id="first_name" type="text" class="form-control" name="first_name" @bind-value="_user.Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12" style="margin-top: 15px;">
+                            <label for="email" style="color: #7d7575;">Email</label>
+                            <input id="email" type="email" class="form-control" name="email" value="@_user.Email"
+                                   style="pointer-events: none;">
+                            <div style="margin-top: 5px; color: #7d7575;">
+                                Lưu ý: Email đã xác thực và không thể thay
+                                đổi.
+                            </div>
+                            <div class="invalid-feedback">
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="form-group col-12">
+                                <label for="phone" class="d-block" style="color: #7d7575;">Số Điện Thoại</label>
+                                <input id="phone" type="text" class="form-control pwstrength" @bind-value="_user.Phone"
+                                       data-indicator="pwindicator" name="password">
+                                <div id="pwindicator" class="pwindicator">
+                                    <div class="bar"></div>
+                                    <div class="label"></div>
+                                </div>
+                            </div>
+                            <div class="form-group col-12" style="margin-top: 15px;">
+                                <label for="phone" class="d-block" style="color: #7d7575;">Địa Chỉ</label>
+                                <input id="phone" type="text" class="form-control pwstrength" @bind-value="_user.Address"
+                                       data-indicator="pwindicator" name="password">
+                                <div id="pwindicator" class="pwindicator">
+                                    <div class="bar"></div>
+                                    <div class="label"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-12" style="margin-top: 15px;">
+                                <label for="phone" class="d-block" style="color: #7d7575;">Số Tài Khoản</label>
+                                <input id="phone" type="text" class="form-control pwstrength" @bind-value="_user.AccountNumber"
+                                       data-indicator="pwindicator" name="password">
+                                <div id="pwindicator" class="pwindicator">
+                                    <div class="bar"></div>
+                                    <div class="label"></div>
+                                </div>
+
+                                <div class="form-group col-12" style="margin-top: 15px;">
+                                    <label for="phone" class="d-block" style="color: #7d7575;">Ngân Hàng</label>
+                                    <input id="phone" type="text" class="form-control pwstrength" @bind-value="_user.BankName"
+                                           data-indicator="pwindicator" name="password">
+                                    <div id="pwindicator" class="pwindicator">
+                                        <div class="bar"></div>
+                                        <div class="label"></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group col-12" style="margin-top: 15px;">
+                                <label for="phone" class="d-block" style="color: #7d7575;">Chủ Tài Khoản</label>
+                                <input id="phone" type="text" class="form-control pwstrength" @bind-value="_user.AccountOwner"
+                                       data-indicator="pwindicator" name="password">
+                                <div id="pwindicator" class="pwindicator">
+                                    <div class="bar"></div>
+                                    <div class="label"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12" style="margin-top: 15px;">
+                            <label for="phone" class="d-block" style="color: #7d7575;">Giới Tính</label>
+                            <input id="phone" type="text" class="form-control pwstrength" @bind-value="_user.Gender"
+                                   data-indicator="pwindicator" name="password">
+                            <div id="pwindicator" class="pwindicator">
+                                <div class="bar"></div>
+                                <div class="label"></div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="form-group col-12" style="margin-top: 15px;">
+                                <label for="phone" class="d-block" style="color: #7d7575;">Ngày Sinh</label>
+                                <input id="phone" type="datetime-local" class="form-control pwstrength" @bind="_user.Dob"
+                                       data-indicator="pwindicator" name="password">
+                                <div id="pwindicator" class="pwindicator">
+                                    <div class="bar"></div>
+                                    <div class="label"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="form-group col-12">
+                                <div style="display: flex; justify-content: flex-end;">
+                                    <button type="button" class="optional-btn" onclick="@(async ()=> UpdateProfileEven())">
+                                        Cật Nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@code {
+
+
+    SPQuery.SPQuery _spq { get; set; }
+
+    private string _userId { get; set; } = "fb2f20f5-4948-4c5c-a87d-8b16e36c614f";
+    private UserDTO _user { get; set; } = new UserDTO();
+    private ShopModel _shop { get; set; } = new ShopModel();
+
+    private FileExtensions _fileEx { get; set; } = new FileExtensions();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _spq = new SPQuery.SPQuery(JSRuntime);
+        await LoadDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        _user = await _spq.GetProfileAsync(_userId);
+        _shop = await _spq.GetShopProfileAsync(_userId);
+        if (_shop == null) _shop = new ShopModel();
+    }
+
+    private async Task UpdateProfileEven()
+    {
+        bool update = await _spq.UpdateProfileAsync(JSRuntime, _user, _shop);
+        if (update)
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 1, "Cập nhật hồ sơ thành công");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, "Cập nhật hồ sơ thất bại");
+        }
+    }
+
+    private async Task OnFileSelected(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            if (!_fileEx.ImageExtensions.Contains(Path.GetExtension(Path.GetExtension(e.File.Name))))
+            {
+                await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, "Chỉ được upload file ảnh (.png,.jpg,.jpeg)");
+                return;
+            }
+            IFormFile file = await UtilitesFunction.FileSelected(JSRuntime, e.File);
+            if (file != null)
+            {
+                int fileId = await _spq.SaveFileAsync(JSRuntime, file, file.Length.ToString(), Path.GetExtension(file.Name), Guid.NewGuid().ToString(), NavigationManager.BaseUri, "0", "file-image!@#$");
+                _shop.LogoId = fileId;
+            }
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, ex.Message.ToString());
+        }
+    }
+}

@@ -1,0 +1,30 @@
+﻿<li>
+    <div style="margin: 0 5px; width: 19px; height: 19px;@(_color.ToUpper() == "#FFFFFF" ? "background-color:ghostwhite": $"background-color:{_color}");border-radius: 55px; border: solid 1px #b2acac;" title="@_title">
+
+    </div>
+</li>
+
+@code {
+    [Parameter]
+    public string Code { get; set; } = string.Empty;
+
+    private string _id { get; set; }
+    private string _color { get; set; }
+    private string _title { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!string.IsNullOrEmpty(Code))
+        {
+            _color = Code.Split("!")[1];
+            _title = Code.Split("!")[0];
+        }
+        await base.OnParametersSetAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _id = Guid.NewGuid().ToString();
+        await base.OnInitializedAsync();
+    }
+}

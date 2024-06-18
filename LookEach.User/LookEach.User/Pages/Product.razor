@@ -1,0 +1,512 @@
+﻿@page "/LookEach/Product/{Type:int}"
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager
+@using LookEach.User.Component
+@using LookEach.User.ViewModel
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+@inject ProtectedSessionStorage ProtectedSessionStore
+@inject AuthenticationStateProvider AuthenticationStateProvider
+<PageTitle>LookEach - Sản phẩm thời trang</PageTitle>
+
+<style>
+
+    .products-filter-options .products-ordering-list {
+        background-color: transparent;
+        border: none;
+        height: 40px;
+        line-height: 40px;
+        color: #777777;
+        font-size: 15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+        .products-filter-options .products-ordering-list::after {
+            right: 2px;
+            width: 7px;
+            height: 7px;
+            border-color: #727695;
+            border-width: 1px;
+        }
+
+        .products-filter-options .products-ordering-list .current {
+            color: #777777;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .products-filter-options .products-ordering-list .list {
+            background-color: #ffffff;
+            border-radius: 0;
+            -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+            .products-filter-options .products-ordering-list .list .option {
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+                line-height: 35px;
+                min-height: 35px;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-size: 15px;
+            }
+
+                .products-filter-options .products-ordering-list .list .option:hover, .products-filter-options .products-ordering-list .list .option.focus, .products-filter-options .products-ordering-list .list .option.selected.focus {
+                    background-color: transparent;
+                    color: #47261D;
+                }
+
+                .products-filter-options .products-ordering-list .list .option.selected {
+                    font-weight: 700;
+                }
+
+</style>
+
+<PageTitle>LookEach - Sản Phẩm</PageTitle>
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>@(Type == 1 ? "Thời Trang Tổng Hợp" : Type == 2 ? "Thời Trang Nam" : Type == 3 ? "Thời Trang Nữ" : "")</h2>
+            <ul>
+                <li><a href="/">Trang Chủ</a></li>
+                <li style="color: #47261D;">Danh Mục</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="products-area pt-100 pb-70">
+    <div class="container">
+        <div class="products-filter-options">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-4">
+                    <div class="d-lg-flex d-md-flex align-items-center">
+                        <span class="sub-title">
+                            <a data-bs-toggle="modal"
+                               data-bs-target="#productsFilterModal">
+                                <i class="bx bx-filter-alt"></i>
+                                Filter
+                            </a>
+                        </span> 
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    @* <p>Trang 1 – 18/100</p> *@
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <aside class="widget-area">
+                        <section class="widget widget_search">
+                            <form class="search-form">
+                                <label>
+                                    <span class="screen-reader-text">Search for:</span>
+                                    <input type="search" class="search-field"
+                                           placeholder="Tìm kiếm sản phẩm...">
+                                </label>
+                            </form>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <div id="products-collections-filter" class="row">
+            @if (_products != null && _products.Count() > 0)
+            {
+                foreach (var item in _products)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-6 products-col-item">
+                        <div class="single-products-box">
+                            <div class="products-image">
+                                <a href="/LookEach/ProductDetail/@item.Id" style="width: 416px; height: 416px;">
+                                    <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (item.Files[0] != null ? item.Files[0].FileId.ToString() : "0"))" class="main-image" alt="image">
+                                    <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (item.Files[2] != null ? item.Files[2].FileId.ToString() : "0"))" class="hover-image" alt="image">
+                                </a>
+                                <div class="products-button">
+                                    <ul>
+                                        <li>
+                                            <div class="quick-view-btn">
+                                                <a style="cursor: pointer;" onclick="@(async ()=> ViewQuiz(item.Id))">
+                                                    <i class="bx bx-search-alt"></i>
+                                                    <span class="tooltip-label">Xem Nhanh</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @if (item.CreatedOn.Date >= DateTime.Now.Date && item.CreatedOn.Date <= DateTime.Now.AddDays(2).Date)
+                                {
+                                    <div class="new-tag">Mới!</div>
+                                }
+
+                            </div>
+                            <div class="products-content">
+                                <h3><a href="/LookEach/ProductDetail/@item.Id">@item.Name</a></h3>
+                                <div class="price">
+                                    <!-- <span class="old-price">2,000,000 </span> -->
+                                    <span class="new-price"> @item.Price.ToString("N0") VNĐ</span>
+                                </div>
+                                <div class="star-rating">
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                </div>
+                                <a href="/LookEach/ProductDetail/@item.Id" class="add-to-cart">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div>
+                    <h4>Không Có Thông Tin Sản Phẩm</h4>
+                </div>
+            }
+        </div>
+        <div class="pagination-area text-center">
+            <a class="prev page-numbers"><i class="bx bx-chevron-left"></i></a>
+            <span class="page-numbers current" aria-current="page">1</span>
+            <a class="page-numbers">2</a>
+            <a class="page-numbers">3</a>
+            <a class="page-numbers">4</a>
+            <a class="page-numbers">5</a>
+            <a class="next page-numbers"><i class="bx bx-chevron-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<div class="modal left fade productsFilterModal" id="productsFilterModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:#47261D !important;"><i class="bx bx-x"></i> Đóng</span>
+            </button>
+            <div class="modal-body">
+                <div class="woocommerce-widget-area">
+                    <div class="woocommerce-widget filter-list-widget">
+                        <h3 class="woocommerce-widget-title">Lựa Chọn Hiện Tại</h3>
+                        <div class="selected-filters-wrap-list">
+                            <!-- <a  class="delete-selected-filters"><i class="bx bx-search"></i> <span>Tìm
+                                Kiếm</span></a> -->
+                            <ul>
+                                <li><a><i class="bx bx-x"></i> Áo</a></li>
+                                <li><a><i class="bx bx-x"></i> Nam/Nữ</a></li>
+                                <li><a><i class="bx bx-x"></i> 36</a></li>
+                                <li><a><i class="bx bx-x"></i> Đen</a></li>
+                                <li><a><i class="bx bx-x"></i> Moncler</a></li>
+                            </ul>
+                            <a class="delete-selected-filters">
+                                <i class="bx bx-trash"></i> <span>
+                                    Xóa
+                                    Tất Cả
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="woocommerce-widget collections-list-widget">
+                        <h3 class="woocommerce-widget-title">Bộ Sưu Tập</h3>
+                        <ul class="collections-list-row">
+                            <li><a>Áo</a></li>
+                            <li class="active"><a class="active">Quần</a></li>
+                            <li><a>Giày Dép</a></li>
+                            <li><a>Áo Khoác</a></li>
+                            <li><a>Váy Đầm</a></li>
+                            <li><a>Tổng Hợp</a></li>
+                        </ul>
+                    </div>
+                    <div class="woocommerce-widget collections-list-widget">
+                        <h3 class="woocommerce-widget-title">Giới Tính</h3>
+                        <ul class="collections-list-row">
+                            <li class="active"><a class="active">Tất Cả</a></li>
+                            <li><a>Nam</a></li>
+                            <li class="active"><a class="active">Nữ</a></li>
+                        </ul>
+                    </div>
+                    <div class="woocommerce-widget brands-list-widget">
+                        <h3 class="woocommerce-widget-title">Giá</h3>
+                        <ul class="brands-list-row">
+                            <li><a>Thấp Đến Cao</a></li>
+                            <li><a>Cao Xuống Thấp</a></li>
+                        </ul>
+                    </div>
+                    <div class="woocommerce-widget size-list-widget">
+                        <h3 class="woocommerce-widget-title">Kích Thước</h3>
+                        <ul class="size-list-row">
+                            <li><a>20</a></li>
+                            <li><a>24</a></li>
+                            <li class="active"><a>36</a></li>
+                            <li><a>30</a></li>
+                            <li><a>XS</a></li>
+                            <li><a>S</a></li>
+                            <li><a>M</a></li>
+                            <li><a>L</a></li>
+                            <li><a>L</a></li>
+                            <li><a>XL</a></li>
+                        </ul>
+                    </div>
+                    <div class="woocommerce-widget color-list-widget">
+                        <h3 class="woocommerce-widget-title">Màu Sắc</h3>
+                        <ul class="color-list-row">
+                            <li class="active"><a title="Black" class="color-black"></a></li>
+                            <li><a title="Red" class="color-red"></a></li>
+                            <li><a title="Yellow" class="color-yellow"></a></li>
+                            <li><a title="White" class="color-white"></a></li>
+                            <li><a title="Blue" class="color-blue"></a></li>
+                            <li><a title="Green" class="color-green"></a></li>
+                            <li><a title="Yellow Green" class="color-yellowgreen"></a></li>
+                            <li><a title="Pink" class="color-pink"></a></li>
+                            <li><a title="Violet" class="color-violet"></a></li>
+                            <li><a title="Blue Violet" class="color-blueviolet"></a></li>
+                            <li><a title="Lime" class="color-lime"></a></li>
+                            <li><a title="Plum" class="color-plum"></a></li>
+                            <li><a title="Teal" class="color-teal"></a></li>
+                            <li><a title="Gray " class="color-Gray"></a></li>
+                            <li><a title="Orange" class="color-Orange"></a></li>
+                            <li><a title="Purple" class="color-Purple"></a></li>
+                            <li><a title="Brown" class="color-Brown"></a></li>
+                            <li><a title="Navy Blue" class="color-NavyBlue"></a></li>
+                            <li><a title="Olive" class="color-Olive"></a></li>
+                            <li><a title="Silver" class="color-Silver"></a></li>
+                            <li><a title="Gold" class="color-Gold"></a></li>
+                        </ul>
+                    </div>
+                    <div class="woocommerce-widget brands-list-widget">
+                        <h3 class="woocommerce-widget-title">Nhãn Hàng</h3>
+                        <ul class="brands-list-row">
+                            <li><a>Gucci</a></li>
+                            <li><a>Virgil Abloh</a></li>
+                            <li><a>Balenciaga</a></li>
+                            <li class="active"><a>Moncler</a></li>
+                            <li><a>Fendi</a></li>
+                            <li><a>Versace</a></li>
+                        </ul>
+                    </div>
+                    <div class="woocommerce-widget aside-trending-widget">
+                        <div class="aside-trending-products">
+                            <img src="assets/img/offer-bg.jpg" alt="image">
+                            <div class="category" id="category">
+                                <h3>Xu Hướng Hàng Đầu</h3>
+                                <span>Bộ Sưu 2024</span>
+                            </div>
+                            <a href="#category" class="link-btn" style="pointer-events: none;cursor: pointer;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button id="tmp-vw" data-bs-toggle="modal" data-bs-target="#productsQuickView" style="display: none;">
+    Tmp
+</button>
+<div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="bx bx-x"></i></span>
+            </button>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="products-image" style="width:416px ;height:416px;">
+                        @if (_current != null && !string.IsNullOrEmpty(_current.Id))
+                        {
+                            <img style="width: 100%; height: 100%;" src="@(NavigationManager.BaseUri + "api/Files/File?FileID=" + (_current.Files[1] != null ? _current.Files[1].FileId.ToString() : "0"))" class="main-image" alt="image">
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6" id="view-quiz" style="padding-left: 30px;">
+                    @if (_current != null && !string.IsNullOrEmpty(_current.Id))
+                    {
+                        <div class="products-content">
+                            <h3><a href="@($"/LookEach/ProductDetail/{_current.Id}")">@_current.Name</a></h3>
+                            <div class="price">
+                                <span class="old-price">@((_current.Price + 250).ToString("N0"))</span>
+                                <span class="new-price">@_current.Price.ToString("N0") VNĐ</span>
+                            </div>
+                            <div class="products-review">
+                                <div class="rating">
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                </div>
+                                <a href="#view-quiz" class="rating-count">3 Đánh Giá</a>
+                            </div>
+                            <ul class="products-info" style="margin-top: 10px;">
+                                <li>
+                                    <span>
+                                        Chất liệu:
+                                    </span>
+                                    <a>
+                                        @_current.Material
+                                    </a>
+
+                                </li>
+                                <li>
+                                    <span>Tình Trạng Còn Hàng: </span>
+                                    @if (_current.Quantity > 0)
+                                    {
+                                        <a>
+                                            Còn hàng (@_current.Quantity sản
+                                            phẩm)
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a>
+                                            hết hàng (@_current.Quantity sản
+                                            phẩm)
+                                        </a>
+                                    }
+                                </li>
+                                <li>
+                                    <span>Loại Sản Phẩm: </span>
+                                    @if (_current.CategoryId.ToUpper() == "1E6145DA-38A1-434B-B27F-5FF2D15F331C")
+                                    {
+                                        <a> Áo - @(_current.ObjectTypeId == 1 ? "Nam/Nữ" : _current.ObjectTypeId == 2 ? "Nam" : _current.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                    }
+                                    else if (_current.CategoryId.ToUpper() == "3B9F1CB2-1723-4587-9E19-17C147009298")
+                                    {
+                                        <a> Quần - @(_current.ObjectTypeId == 1 ? "Nam/Nữ" : _current.ObjectTypeId == 2 ? "Nam" : _current.ObjectTypeId == 3 ? "Nữ" : "")</a>
+                                    }
+                                </li>
+                            </ul>
+                            <div class="products-color-switch">
+                                <h4>Màu Sắc:</h4>
+                                <ul>
+                                    @if (_current.ColorChoices != null)
+                                    {
+                                        foreach (var item in _current.ColorChoices)
+                                        {
+                                            <ColorProduct Code="@item.Name"></ColorProduct>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="products-size-wrapper">
+                                <h4>Kích Thước:</h4>
+                                <ul>
+                                    @if (_current.SizeChoices != null)
+                                    {
+                                        foreach (var item in _current.SizeChoices)
+                                        {
+                                            if (item == _size)
+                                            {
+                                                <li class="active"><a style="cursor: pointer;" onclick="@(async ()=> await SizeChanged(item))">@item.Name.Split(" ")[0]</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a style="cursor: pointer;" onclick="@(async ()=> await SizeChanged(item))">@item.Name.Split(" ")[0]</a></li>
+                                            }
+
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                            <div class="products-add-to-cart">
+                                <div class="input-counter">
+                                    <span class="minus-btn" onclick="@(() => AmounChanged(false))"><i class="bx bx-minus"></i></span>
+                                    <input type="number" value="@_amount">
+                                    <span class="plus-btn" onclick="@(() => AmounChanged(true))"><i class="bx bx-plus"></i></span>
+                                </div>
+                                <button type="button" class="default-btn" onclick="@(async ()=> AddToCart())" data-bs-dismiss="modal" aria-label="Close">Thêm Vào Giỏ Hàng</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public int Type { get; set; } = 0;
+
+    private SPQuery.SPQuery _spq { get; set; }
+    private string _userId { get; set; } = "fb2f20f5-4948-4c5c-a87d-8b16e36c614f";
+    private List<ProductDetailViewMode> _products { get; set; } = new List<ProductDetailViewMode>();
+    // private List<ProductDetailViewMode> _productFilters { get; set; } = new List<ProductDetailViewMode>();
+
+    private ProductDetailViewMode _current { get; set; } = new ProductDetailViewMode();
+    private Model.Size _size { get; set; } = new Model.Size();
+    private int _amount { get; set; } = 1;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        // if (_products != null)
+        // {
+        //     _productFilters = _products.Where(p => p.ObjectTypeId == Type).ToList();
+        // }
+        await base.OnParametersSetAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _spq = new SPQuery.SPQuery(JSRuntime);
+        await LoadDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        _products = await _spq.GetProductAsync(_userId, Type);
+    }
+
+    private async Task ViewQuiz(string proId)
+    {
+        var current = _products.Where(p => p.Id == proId).FirstOrDefault();
+        if (current != null)
+        {
+            _current = current;
+            _amount = 1;
+            _size = new Model.Size();
+            await InvokeAsync(StateHasChanged);
+            await JSRuntime.InvokeVoidAsync("OpenViewQuiz");
+        }
+    }
+
+    private async Task AddToCart()
+    {
+        try
+        {
+            int amount = await _spq.SaveCartAsync(_userId, _current.Id, _size.Id, _amount);
+            _current = new ProductDetailViewMode(); 
+            _amount = 1;
+            _size = new Model.Size();
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 1, "Thêm vào giỏ hàng thành công");
+            await JSRuntime.InvokeVoidAsync("UpdateCartCount", amount);
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("AnnountMessage", 2, ex.Message.ToString());
+        }
+    }
+
+    private async Task SizeChanged(Model.Size size)
+    {
+        if (size != null)
+        {
+            _size = size;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task AmounChanged(bool inscrease)
+    {
+        _amount = inscrease ? _amount + 1 : _amount - 1;
+        if (_amount < 1)
+            _amount = 1;
+        await InvokeAsync(StateHasChanged);
+    }
+}
